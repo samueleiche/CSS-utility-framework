@@ -15,46 +15,46 @@ html {
 
 .container {
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: $gutter-width;
+  padding-left: $gutter-width;
   margin-right: auto;
   margin-left: auto;
 }
 
-@media (min-width: 576px) {
+@media (min-width: $grid-sm-breakpoint) {
   .container {
-    max-width: 540px;
+    max-width: $container-sm-max-width;
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: $grid-md-breakpoint) {
   .container {
-    max-width: 720px;
+    max-width: $container-md-max-width;
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: $grid-lg-breakpoint) {
   .container {
-    max-width: 960px;
+    max-width: $container-lg-max-width;
   }
 }
 
-@media (min-width: 1224px) {
+@media (min-width: $grid-xl-breakpoint) {
   .container {
-    max-width: 1140px;
+    max-width: $container-xl-max-width;
   }
 }
 
-@media (min-width: 1400px) {
+@media (min-width: $container-extended-breakpoint) {
   .container-extended {
-    max-width: 1340px;
+    max-width: $container-extended-max-width;
   }
 }
 
 .container-full {
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: $gutter-width;
+  padding-left: $gutter-width;
   margin-right: auto;
   margin-left: auto;
 }
@@ -64,8 +64,8 @@ html {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
+  margin-right: -($gutter-width);
+  margin-left: -($gutter-width);
 }
 
 .no-gutter {
@@ -88,8 +88,8 @@ html {
   position: relative;
   width: 100%;
   min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: $gutter-width;
+  padding-left: $gutter-width;
 }
 
 .grid {
@@ -288,7 +288,7 @@ html {
   margin-left: 91.666667%;
 }
 
-@media (min-width: 576px) {
+@media (min-width: $grid-sm-breakpoint) {
   .grid-sm {
     -ms-flex-preferred-size: 0;
         flex-basis: 0;
@@ -452,7 +452,7 @@ html {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: $grid-md-breakpoint) {
   .grid-md {
     -ms-flex-preferred-size: 0;
         flex-basis: 0;
@@ -616,7 +616,7 @@ html {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: $grid-lg-breakpoint) {
   .grid-lg {
     -ms-flex-preferred-size: 0;
         flex-basis: 0;
@@ -780,7 +780,7 @@ html {
   }
 }
 
-@media (min-width: 1224px) {
+@media (min-width: $grid-xl-breakpoint) {
   .grid-xl {
     -ms-flex-preferred-size: 0;
         flex-basis: 0;
@@ -945,7 +945,7 @@ html {
 }
 
 .text-hidden {
-  font: 0/0 a;
+  font: 0 / 0 a;
   color: transparent;
   text-shadow: none;
   background-color: transparent;
@@ -965,7 +965,7 @@ html {
   visibility: hidden !important;
 }
 
-@media (min-width: 576px) {
+@media (min-width: $grid-sm-breakpoint) {
   .hide-sm {
     display: none !important;
   }
@@ -980,7 +980,7 @@ html {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: $grid-md-breakpoint) {
   .hide-md {
     display: none !important;
   }
@@ -995,7 +995,7 @@ html {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: $grid-lg-breakpoint) {
   .hide-lg {
     display: none !important;
   }
@@ -1010,7 +1010,7 @@ html {
   }
 }
 
-@media (min-width: 1224px) {
+@media (min-width: $grid-xl-breakpoint) {
   .hide-xl {
     display: none !important;
   }
@@ -1025,16 +1025,12 @@ html {
   }
 }
 
-
-/*
-* Add '.fluid-break' class to your containers for smoother breaking.
-*
-*/
+// Add '.fluid-break' class to your containers for smoother breaking.
 
 .fluid-break {
-  -webkit-transition: .2s;
-  -moz-transition: .2s;
-  -ms-transition: .2s;
-  -o-transition: .2s;
-  transition: .2s;
+  -webkit-transition: $transition-base;
+  -moz-transition: $transition-base;
+  -ms-transition: $transition-base;
+  -o-transition: $transition-base;
+  transition: $transition-base;
 }
