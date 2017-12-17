@@ -11,5 +11,5 @@ Quickstart examples.
 `.grid-offset-sm-6`
 
 `.no-gutter`
-`.hide, .invisible`
-`.show, .visible`
+`.hide, .invisible-sm`
+`.show-lg, .visible`
