@@ -1,0 +1,37 @@
+/*
+* Grid breakpoints
+*
+* Define the minimum dimensions at which your layout will change,
+* adapting to different screen sizes, for use in media queries.
+*/
+
+$grid-sm-breakpoint: 576px;
+$grid-md-breakpoint: 768px;
+$grid-lg-breakpoint: 1024px;
+$grid-xl-breakpoint: 1224px;
+$container-extended-breakpoint: 1400px;
+
+/*
+ * Grid containers
+ *
+ * Define the maximum width of container classes for different screen sizes.
+ */
+
+$container-sm-max-width: 540px;
+$container-md-max-width: 720px;
+$container-lg-max-width: 960px;
+$container-xl-max-width: 1140px;
+$container-extended-max-width: 1340px;
+
+
+/*
+ * Specify the width of the gutters sides.
+ */
+
+$gutter-width: 15px;
+
+/*
+ * Specify the tranition of the '.fluid-break' class.
+ */
+
+$transition-base: .2s;
