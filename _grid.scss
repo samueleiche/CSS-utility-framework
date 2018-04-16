@@ -50,6 +50,11 @@ html {
     margin-left: auto;
 }
 
+.container--no-gutter {
+    padding-right: 0;
+    padding-left: 0;
+}
+
 .grid {
     display: -ms-flexbox;
     display: flex;
@@ -81,6 +86,10 @@ html {
     padding-left: $gutter-width;
 }
 
+/*
+ * Create equal columns
+ */
+
 .grid__col-equal {
     -ms-flex-preferred-size: 0;
     flex-basis: 0;
@@ -88,6 +97,11 @@ html {
     flex-grow: 1;
     max-width: 100%;
 }
+
+/*
+ * Add break between grid__col-equal columns in grid to
+ * break into a new line ex. 2x2 grid: col col break col col
+ */
 
 .grid__col-equal-break {
     width: 100%;
@@ -1191,7 +1205,7 @@ html {
 }
 
 /*
- * Add '.fluid-break' class to your containers for smoother breaking.
+ * Add this class to your containers for smoother breaking.
  */
 
 .fluid-break {
