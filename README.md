@@ -13,7 +13,7 @@ Css grid based on bootstrap 4 grid system and BEM
 `.hide, .invisible-sm`
 `.show-lg, .visible`
 
-## Demo
+## Demo of using classes
 
 ```html
   <div class="container container--extended">
@@ -26,7 +26,8 @@ Css grid based on bootstrap 4 grid system and BEM
     </div>
 
     <div class="grid">
-      <div class="grid__col-4  grid__col-offset-4 grid__col-md-6 grid__col-md-offset-3"></div>
+      <div class="grid__col-4  grid__col-offset-4 grid__col-md-6 grid__col-md-offset-0"></div>
+      <div class="grid__col-4  grid__col-offset-4 grid__col-md-6 grid__col-md-offset-0"></div>
     </div>
   </div>
 ```
