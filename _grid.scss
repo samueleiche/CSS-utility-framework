@@ -1195,7 +1195,11 @@ html {
     }
 }
 
-.clear {
+/*
+ * Clearfix
+ */
+
+.cf {
     &::before,
     &::after {
         content: "";
