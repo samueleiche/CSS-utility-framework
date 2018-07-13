@@ -1196,6 +1196,39 @@ html {
 }
 
 /*
+ * Content positioning, add to grid__col element
+ */
+
+.content-bottom,
+.content-right,
+.content-v-center,
+.content-h-center,
+.content-center {
+    display: flex;
+}
+
+.content-bottom {
+    align-items: flex-end;
+}
+
+.content-right {
+    justify-content: flex-end;
+}
+
+.content-v-center {
+    align-items: center;
+}
+
+.content-h-center {
+    justify-content: center;
+}
+
+.content-center {
+    justify-content: center;
+    align-items: center;
+}
+
+/*
  * Clearfix
  */
 
