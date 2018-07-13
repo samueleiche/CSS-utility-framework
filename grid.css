@@ -321,6 +321,52 @@ html {
 }
 
 /*
+ * Content positioning, add to grid__col element
+ */
+.content-bottom,
+.content-right,
+.content-v-center,
+.content-h-center,
+.content-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.content-bottom {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.content-right {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.content-v-center {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.content-h-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.content-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/*
  * Clearfix
  */
 .cf::before, .cf::after {
@@ -1161,4 +1207,3 @@ html {
     max-width: 1340px;
   }
 }
-
