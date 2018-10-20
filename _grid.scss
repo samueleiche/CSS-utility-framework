@@ -99,6 +99,14 @@ html {
 }
 
 /*
+ * Static class when using large absolute positioned columns
+ */
+
+.grid__col-static {
+    position: static;
+}
+
+/*
  * Add break between grid__col-equal columns in grid to
  * break into a new line ex. 2x2 grid: col col break col col
  */
@@ -1229,7 +1237,7 @@ html {
 }
 
 /*
- * Content positioning, add to grid__col element
+ * Content positioning, add mostly to grid__col elements
  */
 
 .content-top,
@@ -1237,8 +1245,13 @@ html {
 .content-right,
 .content-v-center,
 .content-h-center,
-.content-center {
+.content-center,
+.content-spaced {
     display: flex;
+
+    &.container {
+        height: 100%;
+    }
 }
 
 .content-top {
@@ -1266,6 +1279,11 @@ html {
     align-items: center;
 }
 
+.content-spaced {
+    justify-content: space-between;
+}
+
+
 /*
  * Clearfix
  */
@@ -1280,7 +1298,7 @@ html {
 }
 
 /*
- * Add this class to your containers for smoother breaking.
+ * Add this class to containers for smoother breaking.
  */
 
 .fluid-break {
