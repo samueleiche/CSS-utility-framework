@@ -2,7 +2,6 @@
 
 // Define the minimum dimensions at which your layout will change,
 // adapting to different screen sizes, for use in media queries.
-
 $grid-sm-breakpoint: 576px;
 $grid-md-breakpoint: 768px;
 $grid-lg-breakpoint: 1024px;
@@ -13,7 +12,6 @@ $container-extended-breakpoint: 1400px;
 // Grid containers
 
 // Define the maximum width of container classes for different screen sizes.
-
 $container-sm-max-width: 540px;
 $container-md-max-width: 720px;
 $container-lg-max-width: 960px;
@@ -22,10 +20,35 @@ $container-extended-max-width: 1340px;
 
 
 // Specify the width of the gutters sides.
-
 $gutter-width: 15px;
 
 
 // Specify the tranition of the '.fluid-break' class.
-
 $transition-base: .2s;
+
+
+// Define number of max columns in a row
+$grid-max-columns: 12;
+
+
+// Define class names
+$grid-class: 'grid__col';
+$grid-sizes: ("", "-sm", "-md", "-lg", "-xl");
+
+
+// Iteration variables
+$total-grid-columns: $grid-max-columns + 1;
+$media-sizes: (
+    0,
+    $grid-sm-breakpoint,
+    $grid-md-breakpoint,
+    $grid-lg-breakpoint,
+    $grid-xl-breakpoint,
+);
+$container-sizes: (
+    0,
+    $container-sm-max-width,
+    $container-md-max-width,
+    $container-lg-max-width,
+    $container-xl-max-width,
+);
