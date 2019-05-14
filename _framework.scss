@@ -57,7 +57,11 @@ $media-map: (
 }
 
 @mixin flex-column-offset($point) {
-    $percentage: percentage($point / $row-max-columns);
+    $percentage: 0;
+
+    @if $point != 0 {
+        $percentage: percentage($point / $row-max-columns);
+    }
 
     margin-left: $percentage;
 }
@@ -394,7 +398,3 @@ $media-map: (
 
 // Include framework to build all classes
 @include init-framework;
-
-// TODO: gather and document the extra content classes (images, typography, theming)
-// https://getbootstrap.com/docs/4.3/content/images/
-// https://getbootstrap.com/docs/4.3/content/typography/

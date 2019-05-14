@@ -1,6 +1,10 @@
 # CSS framework for fast layouts
+## Boilerplate
 
-## Class names examples
+`_typography.scss`, `_theme.scss`, `_utility.scss` and `_base.scss` and fully customizable
+for the projects needs with a few pre made classes to help get started.
+
+## Framework
 Every class includes a breakpoint abbreviation, from `sm` to `xl`. Classes without an abbrevation are
 applied from `min-width: 0` and are not bound by media queries.
 

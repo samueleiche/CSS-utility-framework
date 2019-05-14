@@ -1,0 +1,37 @@
+.font-large {
+    font-size: $font-size-large;
+}
+
+.font-big {
+    font-size: $font-size-big;
+}
+
+.font-small {
+    font-size: $font-size-small;
+}
+
+.font-tiny {
+    font-size: $font-size-tiny;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.normal {
+    font-weight: 400;
+}
+
+.semibold {
+    font-weight: 500;
+}
+
+b,
+strong,
+.bold {
+    font-weight: 600;
+}

@@ -1,2 +1,7 @@
 @import 'variables';
-@import 'grid';
+// include normalize here
+@import 'base';
+@import 'theme';
+@import 'typography';
+@import 'utility';
+@import 'framework';

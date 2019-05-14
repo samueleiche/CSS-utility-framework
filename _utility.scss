@@ -1,0 +1,64 @@
+// Vue.js element attribute to hide element while it's mounting
+[v-cloak]  {
+    display: none !important;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.zindex {
+    z-index: 1;
+}
+
+.zindex-n {
+    z-index: -1;
+}
+
+.absolute-fill {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.fixed-bottom {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.no-overflow {
+    overflow: hidden;
+}
+
+// for the <img> tag
+.image {
+  max-width: 100%;
+  height: auto;
+}
+
+// for an element with a backgroud image
+.bg-image {
+    min-height: 100px;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    @media (min-width: $grid-md-breakpoint) {
+        min-height: 200px;
+    }
+}
