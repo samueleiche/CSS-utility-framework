@@ -1,0 +1,400 @@
+// Breakpoints and container widths should be defined globally
+
+// $grid-sm-breakpoint: 576px;
+// $grid-md-breakpoint: 768px;
+// $grid-lg-breakpoint: 1024px;
+// $grid-xl-breakpoint: 1400px;
+
+// $container-sm-max-width: 100%;
+// $container-md-max-width: $container-sm-max-width;
+// $container-lg-max-width: 1050px;
+// $container-xl-max-width: $container-lg-max-width;
+
+$row-max-columns: 12;
+$gutter-width: 16px;
+
+$spacer: 1rem;
+$spacers: (
+    0: 0,
+    1: ($spacer * .25),
+    2: ($spacer * .5),
+    3: $spacer,
+    4: ($spacer * 1.5),
+    5: ($spacer * 3),
+    6: ($spacer * 6),
+    7: ($spacer * 12)
+);
+
+$container-modifiers: ('', '-half');
+
+$media-tiers: ('', '-sm', '-md', '-lg', '-xl');
+$media-map: (
+    0: null,
+    $grid-sm-breakpoint: $container-sm-max-width,
+    $grid-md-breakpoint: $container-md-max-width,
+    $grid-lg-breakpoint: $container-lg-max-width,
+    $grid-xl-breakpoint: $container-xl-max-width,
+);
+
+@mixin flex-column($point: null) {
+    width: 100%;
+
+    // if $point is not defined, make equal columns
+    @if $point == null {
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: 100%;
+    } @else {
+        @if $point < 1 or $point > $row-max-columns {
+            @error 'Required range 1-#{$row-max-columns}, was #{$point}';
+        }
+
+        $percentage: percentage($point / $row-max-columns);
+
+        flex: 0 0 $percentage;
+        max-width: $percentage;
+    }
+}
+
+@mixin flex-column-offset($point) {
+    $percentage: percentage($point / $row-max-columns);
+
+    margin-left: $percentage;
+}
+
+@mixin make-utilities($size) {
+    // General utilities
+
+    .hidden#{$size} {
+        display: none !important;
+    }
+
+    .block#{$size} {
+        display: block !important;
+    }
+
+    .inline-block#{$size} {
+        display: inline-block !important;
+    }
+
+    .full-height#{$size} {
+        height: 100% !important;
+    }
+
+    .full-width#{$size} {
+        width: 100% !important;
+    }
+
+    .auto-height#{$size} {
+        height: auto !important;
+    }
+
+    .auto-width#{$size} {
+        width: auto !important;
+    }
+
+    .relative#{$size} {
+        position: relative !important;
+    }
+
+    .absolute#{$size} {
+        position: absolute !important;
+    }
+
+
+    // Flex utilities
+
+    .flex#{$size} {
+        display: flex !important;
+    }
+
+    .flex#{$size}-column {
+        flex-direction: column;
+    }
+
+    .flex#{$size}-row {
+        flex-direction: row;
+    }
+
+    .flex#{$size}-top {
+        align-items: flex-start;
+    }
+
+    .flex#{$size}-bottom {
+        align-items: flex-end;
+    }
+
+    .flex#{$size}-right {
+        justify-content: flex-end;
+    }
+
+    .flex#{$size}-left {
+        justify-content: flex-start;
+    }
+
+    .space#{$size}-between {
+        justify-content: space-between;
+    }
+
+    .flex#{$size}-y-center {
+        align-items: center;
+    }
+
+    .flex#{$size}-x-center {
+        justify-content: center;
+    }
+
+    .flex#{$size}-center {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .flex#{$size}-wrap {
+        flex-wrap: wrap;
+    }
+
+    .flex#{$size}-nowrap {
+        flex-wrap: nowrap;
+    }
+
+    .flex#{$size}-shrink {
+        flex-shrink: 1;
+    }
+
+    .flex#{$size}-noshrink {
+        flex-shrink: 0;
+    }
+
+    .flex#{$size}-grow {
+        flex-grow: 1;
+    }
+
+    .flex#{$size}-nogrow {
+        flex-grow: 0;
+    }
+
+    .flex#{$size}-self-start {
+        align-self: flex-start;
+    }
+
+    .flex#{$size}-self-end {
+        align-self: flex-end;
+    }
+
+    .flex#{$size}-self-center {
+        align-self: center;
+    }
+
+
+    // Text utilities
+
+    .align#{$size}-center {
+        text-align: center;
+    }
+
+    .align#{$size}-left {
+        text-align: left;
+    }
+
+    .align#{$size}-right {
+        text-align: right;
+    }
+
+
+    // Spacing utilities
+
+    .mx#{$size}-auto {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .ml#{$size}-auto {
+        margin-left: auto;
+    }
+
+    .mr#{$size}-auto {
+        margin-right: auto;
+    }
+
+    @each $i, $length in $spacers {
+        .m#{$size}-#{$i} {
+            margin: $length;
+        }
+
+        @if ($i != 0) {
+            .mt#{$size}-n#{$i} {
+                margin-top: -$length;
+            }
+
+            .mr#{$size}-n#{$i} {
+                margin-right: -$length;
+            }
+
+            .mb#{$size}-n#{$i} {
+                margin-bottom: -$length;
+            }
+
+            .ml#{$size}-n#{$i} {
+                margin-left: -$length;
+            }
+        }
+
+        .mt#{$size}-#{$i} {
+            margin-top: $length;
+        }
+
+        .mr#{$size}-#{$i} {
+            margin-right: $length;
+        }
+
+        .mb#{$size}-#{$i} {
+            margin-bottom: $length;
+        }
+
+        .ml#{$size}-#{$i} {
+            margin-left: $length;
+        }
+
+        .mx#{$size}-#{$i} {
+            margin-left: $length;
+            margin-right: $length;
+        }
+
+        .my#{$size}-#{$i} {
+            margin-top: $length;
+            margin-bottom: $length;
+        }
+
+        .p#{$size}-#{$i} {
+            padding: $length;
+        }
+
+        .pt#{$size}-#{$i} {
+            padding-top: $length;
+        }
+
+        .pr#{$size}-#{$i} {
+            padding-right: $length;
+        }
+
+        .pb#{$size}-#{$i} {
+            padding-bottom: $length;
+        }
+
+        .pl#{$size}-#{$i} {
+            padding-left: $length;
+        }
+
+        .px#{$size}-#{$i} {
+            padding-left: $length;
+            padding-right: $length;
+        }
+
+        .py#{$size}-#{$i} {
+            padding-top: $length;
+            padding-bottom: $length;
+        }
+    }
+}
+
+@mixin make-grid-columns($size) {
+    .flex#{$size}-equal {
+        @include flex-column;
+    }
+
+    .flex#{$size}-auto {
+        flex: 0 0 auto;
+        width: auto;
+        max-width: none;
+    }
+
+    .flex#{$size}-order-first {
+        order: -1;
+    }
+
+    .flex#{$size}-order-last {
+        order: $row-max-columns + 1;
+    }
+
+    @for $i from 1 through $row-max-columns {
+        .flex#{$size}-#{$i} {
+            @include flex-column($i);
+        }
+
+        .flex#{$size}-order-#{$i} {
+            order: $i;
+        }
+
+        .flex#{$size}-offset-#{$i - 1} {
+            @include flex-column-offset($i - 1);
+        }
+    }
+}
+
+@mixin make-containers {
+    @each $modifier in $container-modifiers {
+        .container#{$modifier} {
+            padding-right: $gutter-width;
+            padding-left: $gutter-width;
+            margin-right: auto;
+            margin-left: auto;
+
+            @each $breakpoint, $width in $media-map {
+                @if $breakpoint != 0 {
+                    @media (min-width: $breakpoint) {
+                        @if $modifier == '-half' {
+                            // We use width 100% below lg sizes and don't need to halve that
+                            @if is-percentage($width) {
+                                max-width: $width;
+                            } @else {
+                                max-width: $width / 2;
+                            }
+                        } @else {
+                            max-width: $width;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@mixin init-framework {
+    @include make-containers;
+
+    @each $breakpoint, $width in $media-map {
+        $tier: nth($media-tiers, index(($media-map), ($breakpoint $width)));
+
+        @if $breakpoint != 0 {
+            @media (min-width: #{$breakpoint}) {
+                @include make-grid-columns($tier);
+                @include make-utilities($tier);
+            }
+
+        } @else {
+            @include make-grid-columns($tier);
+            @include make-utilities($tier);
+        }
+    }
+}
+
+// TODO: fix margin overflow of surrounding elements;
+// .flex-padding {
+//     margin: 0 - $gutter-width / 2;
+
+//     > [class*='flex-'] {
+//         padding-right: $gutter-width / 2;
+//         padding-left: $gutter-width / 2;
+//     }
+// }
+
+@function is-percentage($value) {
+    @return is-number($value) and unit($value) == '%';
+}
+
+// Include framework to build all classes
+@include init-framework;
+
+// TODO: gather and document the extra content classes (images, typography, theming)
+// https://getbootstrap.com/docs/4.3/content/images/
+// https://getbootstrap.com/docs/4.3/content/typography/
