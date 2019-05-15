@@ -67,7 +67,8 @@ $media-map: (
 }
 
 @mixin make-utilities($size) {
-    // General utilities
+    // Base utilities
+    // -------------------------
 
     .hidden#{$size} {
         display: none !important;
@@ -107,6 +108,7 @@ $media-map: (
 
 
     // Flex utilities
+    // -------------------------
 
     .flex#{$size} {
         display: flex !important;
@@ -177,6 +179,8 @@ $media-map: (
         flex-grow: 0;
     }
 
+    // justify-self is not included because of poor cross-browser support
+
     .flex#{$size}-self-start {
         align-self: flex-start;
     }
@@ -191,6 +195,7 @@ $media-map: (
 
 
     // Text utilities
+    // -------------------------
 
     .align#{$size}-center {
         text-align: center;
@@ -206,14 +211,31 @@ $media-map: (
 
 
     // Spacing utilities
+    // -------------------------
+
+    // about auto margins:
+    // https://css-tricks.com/the-peculiar-magic-of-flexbox-and-auto-margins/
+    // in short - can be used for element alignment, buggy in IE 10/11
+    .my#{$size}-auto {
+        margin-left: auto;
+        margin-right: auto;
+    }
 
     .mx#{$size}-auto {
         margin-left: auto;
         margin-right: auto;
     }
 
+    .mt#{$size}-auto {
+        margin-right: auto;
+    }
+
     .ml#{$size}-auto {
         margin-left: auto;
+    }
+
+    .mb#{$size}-auto {
+        margin-right: auto;
     }
 
     .mr#{$size}-auto {
@@ -225,6 +247,7 @@ $media-map: (
             margin: $length;
         }
 
+        // negative margins
         @if ($i != 0) {
             .mt#{$size}-n#{$i} {
                 margin-top: -$length;
