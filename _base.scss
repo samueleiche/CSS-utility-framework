@@ -42,11 +42,11 @@ iframe {
 h1 {
     font-size: $font-size-h1;
 
-    &.heading-large {
+    &.bigger {
         font-size: $font-size-h1 + 20px;
     }
 
-    &.heading-small {
+    &.smaller {
         font-size: $font-size-h1 - 4px;
     }
 }
@@ -63,19 +63,33 @@ h3 {
 h4 {
     font-size: $font-size-h4;
 
-    &.heading-small {
+    &.smaller {
         font-size: $font-size-h4 - 4px;
     }
 }
 
-a {
+a,
+.link-nostyle {
     text-decoration: none;
     color: $font-color-link;
-    background-color: transparent;
 
     &:hover {
         text-decoration: underline;
     }
+}
+
+p,
+ol,
+ul,
+dl {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.list-nostyle {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 svg {
@@ -83,13 +97,55 @@ svg {
     vertical-align: middle;
 }
 
+address {
+    margin-bottom: 1rem;
+    font-style: normal;
+    line-height: inherit;
+}
+
 table {
     border-collapse: collapse;
 }
 
 img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
+    vertical-align: middle;
+    border-style: none;
+}
+
+input,
+button,
+select,
+optgroup,
+textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+button,
+.button-nostyle {
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+    font-size: 1rem;
+    border-radius: 0;
+}
+
+textarea {
+    overflow: auto;
+    resize: vertical;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: .5rem;
+}
+
+template {
+    display: none;
 }
 
 // [v-cloak] - Vue.js element attribute to hide element while it's mounting

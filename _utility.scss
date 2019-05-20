@@ -1,7 +1,7 @@
 // Utilities without breakpoints
 
-.pointer {
-    cursor: pointer;
+.zindex-n1 {
+    z-index: -1;
 }
 
 .zindex-0 {
@@ -34,6 +34,10 @@
 
 .zindex-100 {
     z-index: 100;
+}
+
+.pointer {
+    cursor: pointer;
 }
 
 .inset {
