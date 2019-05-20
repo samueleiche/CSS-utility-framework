@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../index.css">
+    <title>Semantic html</title>
+</head>
+<body>
+    <header>
+        <!-- multiple nav tags should have specified roles -->
+        <nav role="primary-navigation">
+            <ul>
+                <!-- links for navigation -->
+                <li><a href="#">News</a></li>
+                <li><a href="#">Sports</a></li>
+                <li><a href="#">Weather</a></li>
+            </ul>
+
+            <!-- buttons for actions -->
+            <button name="toggle-menu" type="button">☰</button>
+        </nav>
+    </header>
+
+    <!-- main page content container -->
+    <main role="main">
+        <nav role="crumb-navigation">
+            <ul>
+                <li><a href="#">Sports</a></li>
+                <li><a href="#">Football</a></li>
+                <li><a href="#">Latest</a></li>
+            </ul>
+        </nav>
+        <!-- page intro, NOT a section related to anything -->
+        <h1>Main Section</h1>
+        <p>Intro</p>
+
+        <!-- sections for a consistent structure of distinct sections -->
+        <section>
+            <h2>We do stuff</h2>
+            <p>Lorem ipsum dolor sit amet..</p>
+        </section>
+
+        <section>
+            <!-- article for posts, etc... -->
+            <article>
+                <h3>Post title</h3>
+
+                <figure>
+                    <img src="" alt="">
+                </figure>
+
+                <p>Lorem ipsum dolor sit amet..</p>
+            </article>
+
+            <article>
+                <h3>Post title</h3>
+
+                <figure>
+                    <img src="" alt="">
+                </figure>
+
+                <p>Lorem ipsum dolor sit amet..</p>
+            </article>
+        </section>
+
+        <section>
+            <h2>Contact us</h2>
+            <p>Lorem ipsum dolor sit amet..</p>
+        </section>
+    </main>
+
+    <!-- if aside contains the main function of a page, include it in main instead -->
+    <aside>
+        <!-- use section when separating content only -->
+        <section>
+            <h3>Aside section</h3>
+        </section>
+
+        <section>
+            <h3>Aside section</h3>
+        </section>
+    </aside>
+
+    <footer>
+        <nav role="footer-navigation">
+            <ul>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Policy</a></li>
+            </ul>
+        </nav>
+
+        <address>
+            You can contact author at ...
+        </address>
+    </footer>
+</body>
+</html>

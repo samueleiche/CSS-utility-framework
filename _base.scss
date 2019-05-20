@@ -107,6 +107,11 @@ table {
     border-collapse: collapse;
 }
 
+// use to contain the img with .image classes
+figure {
+    margin: 0;
+}
+
 img {
     width: 100%;
     height: auto;
@@ -127,11 +132,12 @@ textarea {
 
 button,
 .button-nostyle {
-    background-color: transparent;
-    border: 0;
     padding: 0;
-    font-size: 1rem;
+    border: 0;
     border-radius: 0;
+    font-size: 1rem;
+    background-color: transparent;
+    background-image: none;
 }
 
 textarea {
@@ -146,6 +152,18 @@ label {
 
 template {
     display: none;
+}
+
+// Make semantic elements render consistently
+main,
+section,
+aside,
+article,
+header,
+footer,
+nav,
+address {
+    display: block;
 }
 
 // [v-cloak] - Vue.js element attribute to hide element while it's mounting
