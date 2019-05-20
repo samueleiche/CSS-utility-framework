@@ -87,6 +87,13 @@ table {
     border-collapse: collapse;
 }
 
-[hidden] {
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+// [v-cloak] - Vue.js element attribute to hide element while it's mounting
+[hidden],
+[v-cloak] {
     display: none !important;
 }

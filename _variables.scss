@@ -9,6 +9,14 @@ $container-md-max-width: $container-sm-max-width;
 $container-lg-max-width: 1050px;
 $container-xl-max-width: $container-lg-max-width;
 
+$media-tiers: ('', '-sm', '-md', '-lg', '-xl');
+$media-map: (
+    0: null,
+    $grid-sm-breakpoint: $container-sm-max-width,
+    $grid-md-breakpoint: $container-md-max-width,
+    $grid-lg-breakpoint: $container-lg-max-width,
+    $grid-xl-breakpoint: $container-xl-max-width,
+);
 
 // Base
 $black: #000;
@@ -21,6 +29,11 @@ $font-size-large: $base-font-size + 6px;
 $font-size-big: $base-font-size + 2px;
 $font-size-small: $base-font-size - 2px;
 $font-size-tiny: $base-font-size - 4px;
+
+$image-ratio-16-9: 56.25%;
+$image-ratio-3-2: 66.66%;
+$image-ratio-4-3: 75%;
+$image-ratio-1-1: 100%;
 
 
 // Theme

@@ -10,6 +10,20 @@
 // $container-lg-max-width: 1050px;
 // $container-xl-max-width: $container-lg-max-width;
 
+
+// Include media variables globally to add breakpoints to custom classes
+
+// $media-tiers: ('', '-sm', '-md', '-lg', '-xl');
+// $media-map: (
+//     0: null,
+//     $grid-sm-breakpoint: $container-sm-max-width,
+//     $grid-md-breakpoint: $container-md-max-width,
+//     $grid-lg-breakpoint: $container-lg-max-width,
+//     $grid-xl-breakpoint: $container-xl-max-width,
+// );
+
+$container-modifiers: ('', '-half');
+
 $row-max-columns: 12;
 $gutter-width: 16px;
 
@@ -25,16 +39,6 @@ $spacers: (
     7: ($spacer * 12)
 );
 
-$container-modifiers: ('', '-half');
-
-$media-tiers: ('', '-sm', '-md', '-lg', '-xl');
-$media-map: (
-    0: null,
-    $grid-sm-breakpoint: $container-sm-max-width,
-    $grid-md-breakpoint: $container-md-max-width,
-    $grid-lg-breakpoint: $container-lg-max-width,
-    $grid-xl-breakpoint: $container-xl-max-width,
-);
 
 @mixin flex-column($point: null) {
     width: 100%;
@@ -397,7 +401,6 @@ $media-map: (
                 @include make-grid-columns($tier);
                 @include make-utilities($tier);
             }
-
         } @else {
             @include make-grid-columns($tier);
             @include make-utilities($tier);
@@ -405,15 +408,15 @@ $media-map: (
     }
 }
 
-// TODO: fix margin overflow of surrounding elements;
-// .flex-padding {
-//     margin: 0 - $gutter-width / 2;
+.flex-padding {
+    margin-right: -$gutter-width / 2;
+    margin-left: -$gutter-width / 2;
 
-//     > [class*='flex-'] {
-//         padding-right: $gutter-width / 2;
-//         padding-left: $gutter-width / 2;
-//     }
-// }
+    > [class*='flex-'] {
+        padding-right: $gutter-width / 2;
+        padding-left: $gutter-width / 2;
+    }
+}
 
 @function is-percentage($value) {
     @return is-number($value) and unit($value) == '%';
