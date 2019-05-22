@@ -97,12 +97,6 @@ svg {
     vertical-align: middle;
 }
 
-address {
-    margin-bottom: 1rem;
-    font-style: normal;
-    line-height: inherit;
-}
-
 table {
     border-collapse: collapse;
 }
@@ -161,8 +155,7 @@ aside,
 article,
 header,
 footer,
-nav,
-address {
+nav {
     display: block;
 }
 

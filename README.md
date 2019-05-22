@@ -1,7 +1,7 @@
-# CSS framework for fast layouts
+# Lightweight CSS utility-first framework
 ## Boilerplate
 
-`_typography.scss`, `_theme.scss`, `_utility.scss` and `_base.scss` and fully customizable
+`_typography.scss`, `_theme.scss`, `_utility.scss` and `_base.scss` are fully customizable
 for the projects needs with a few pre made classes to help get started.
 
 ## Framework
