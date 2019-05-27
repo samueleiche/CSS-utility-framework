@@ -221,8 +221,8 @@ $spacers: (
     // https://css-tricks.com/the-peculiar-magic-of-flexbox-and-auto-margins/
     // in short - can be used for element alignment, buggy in IE 10/11
     .my#{$size}-auto {
-        margin-left: auto;
-        margin-right: auto;
+        margin-top: auto;
+        margin-bottom: auto;
     }
 
     .mx#{$size}-auto {
@@ -231,19 +231,19 @@ $spacers: (
     }
 
     .mt#{$size}-auto {
-        margin-right: auto;
-    }
-
-    .ml#{$size}-auto {
-        margin-left: auto;
-    }
-
-    .mb#{$size}-auto {
-        margin-right: auto;
+        margin-top: auto;
     }
 
     .mr#{$size}-auto {
         margin-right: auto;
+    }
+
+    .mb#{$size}-auto {
+        margin-bottom: auto;
+    }
+
+    .ml#{$size}-auto {
+        margin-left: auto;
     }
 
     @each $i, $length in $spacers {
