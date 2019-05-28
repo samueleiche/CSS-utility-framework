@@ -163,6 +163,10 @@ $spacers: (
         flex-wrap: wrap;
     }
 
+    .flex#{$size}-wrap-reverse {
+        flex-wrap: wrap-reverse;
+    }
+
     .flex#{$size}-nowrap {
         flex-wrap: nowrap;
     }
