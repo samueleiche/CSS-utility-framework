@@ -1,17 +1,25 @@
+.font-huge {
+    font-size: $text-font-size-huge;
+}
+
 .font-large {
-    font-size: $font-size-large;
+    font-size: $text-font-size-large;
 }
 
 .font-big {
-    font-size: $font-size-big;
+    font-size: $text-font-size-big;
+}
+
+.font-normal {
+    font-size: $text-font-size-default;
 }
 
 .font-small {
-    font-size: $font-size-small;
+    font-size: $text-font-size-small;
 }
 
 .font-tiny {
-    font-size: $font-size-tiny;
+    font-size: $text-font-size-tiny;
 }
 
 .uppercase {
@@ -31,11 +39,11 @@
 }
 
 .semibold {
-    font-weight: 500;
+    font-weight: 600;
 }
 
 b,
 strong,
 .bold {
-    font-weight: 600;
+    font-weight: 700;
 }

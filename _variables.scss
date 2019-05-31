@@ -1,13 +1,13 @@
 // Framework
-$grid-sm-breakpoint: 576px;
-$grid-md-breakpoint: 768px;
-$grid-lg-breakpoint: 1024px;
-$grid-xl-breakpoint: 1400px;
+$grid-sm-breakpoint: 600px;
+$grid-md-breakpoint: 900px;
+$grid-lg-breakpoint: 1200px;
+$grid-xl-breakpoint: 1600px;
 
 $container-sm-max-width: 100%;
 $container-md-max-width: $container-sm-max-width;
-$container-lg-max-width: 1050px;
-$container-xl-max-width: $container-lg-max-width;
+$container-lg-max-width: 1150px;
+$container-xl-max-width: 1500px;
 
 $media-tiers: ('', '-sm', '-md', '-lg', '-xl');
 $media-map: (
@@ -18,51 +18,59 @@ $media-map: (
     $grid-xl-breakpoint: $container-xl-max-width,
 );
 
+
 // Base
-$black: #000;
-$white: #fff;
+$black:             #000;
+$white:             #fff;
 
-$base-line-height: 1;
-
-$base-font-size: 16px;
-$font-size-large: $base-font-size + 6px;
-$font-size-big: $base-font-size + 2px;
-$font-size-small: $base-font-size - 2px;
-$font-size-tiny: $base-font-size - 4px;
-
-$image-ratio-16-9: 56.25%;
-$image-ratio-3-2: 66.66%;
-$image-ratio-4-3: 75%;
-$image-ratio-1-1: 100%;
+$image-ratio-16-9:  56.25%;
+$image-ratio-3-2:   66.66%;
+$image-ratio-4-3:   75%;
+$image-ratio-1-1:   100%;
 
 
 // Theme
-$gray-light: #999;
-$gray: #666;
-$gray-dark: #333;
+$gray-light:        #999;
+$gray:              #666;
+$gray-dark:         #333;
 
-$primary: #4caf50;
-$primary-dark: darken($primary, 10%);
-$accent: #4caf50;
-$accent-dark: darken($accent, 10%);
-$warn: #4caf50;
-$muted: $gray-light;
+$primary:           #4caf50;
+$primary-darker:    darken($primary, 10%);
+$accent:            #4caf50;
+$accent-darker:     darken($accent, 10%);
+$warn:              #f02101;
+$muted:             $gray-light;
+
+$border-color:      $gray-light;
 
 
 // Typography
-$font-family-heading: 'Roboto';
-$font-family-primary: 'Roboto';
+$heading-font-family:       'Open Sans', sans-serif;
+$text-font-family:          'Open Sans', sans-serif;
 
-$font-color-heading: $black;
-$font-color-text: $gray-dark;
-$font-color-link: $font-color-text;
+$heading-font-color:        $black;
+$text-font-color:           #333456;
+$text-link-font-color:      $text-font-color;
 
-$font-size-h1: 40px;
-$font-size-h2: 30px;
-$font-size-h3: 26px;
-$font-size-h4: 22px;
+$heading-line-height:       1.2;
+$text-line-height:          1.5;
+
+$heading-font-size-h1:      40px;
+$heading-font-size-h2:      30px;
+$heading-font-size-h3:      26px;
+$heading-font-size-h4:      22px;
+
+$text-font-size-default:    16px !default;
+$text-font-size-huge:       $text-font-size-default + 8px;
+$text-font-size-large:      $text-font-size-default + 6px;
+$text-font-size-big:        $text-font-size-default + 2px;
+$text-font-size-small:      $text-font-size-default - 2px;
+$text-font-size-tiny:       $text-font-size-default - 4px;
 
 
-// Misc
-$box-shadow-dp-2: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .12), 0 1px 5px 0 rgba(0, 0, 0, .2);
-$box-shadow-dp-24: 0 24px 38px 3px rgba(0, 0, 0, .14), 0 9px 46px 8px rgba(0, 0, 0, .12), 0 11px 15px -7px rgba(0, 0, 0, .2);
+// Z-index for elements
+$zindex-dropdown:       1000 !default;
+$zindex-fixed:          1030 !default;
+$zindex-modal-backdrop: 1040 !default;
+$zindex-modal:          1050 !default;
+$zindex-popover:        1060 !default;

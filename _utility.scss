@@ -4,40 +4,16 @@
     z-index: -1;
 }
 
-.zindex-0 {
-    z-index: 0;
-}
-
 .zindex-1 {
-    z-index: 0;
-}
-
-.zindex-10 {
-    z-index: 10;
-}
-
-.zindex-20 {
-    z-index: 20;
-}
-
-.zindex-30 {
-    z-index: 30;
-}
-
-.zindex-40 {
-    z-index: 40;
-}
-
-.zindex-50 {
-    z-index: 50;
-}
-
-.zindex-100 {
-    z-index: 100;
+    z-index: 1;
 }
 
 .pointer {
     cursor: pointer;
+}
+
+.fixed {
+    position: fixed;
 }
 
 .inset {
@@ -52,7 +28,7 @@
     top: 0;
     right: 0;
     left: 0;
-    z-index: 100;
+    z-index: $zindex-fixed;
 }
 
 .fixed-bottom {
@@ -60,9 +36,15 @@
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: 100;
+    z-index: $zindex-fixed;
 }
 
 .no-overflow {
     overflow: hidden;
+}
+
+// let flex items shrink below their minimum content size
+// https://dfmcphee.com/flex-items-and-min-width-0/
+.min-w-0 {
+    min-width: 0;
 }

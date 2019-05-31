@@ -1,0 +1,54 @@
+// Media queries
+
+@mixin for-phone-only {
+    @media (max-width: $grid-sm-breakpoint - 1) {
+        @content;
+    }
+}
+
+@mixin for-tablet-portrait-up {
+    @media (min-width: $grid-sm-breakpoint) {
+        @content;
+    }
+}
+
+@mixin for-tablet-portait-down {
+    @media (max-width: $grid-md-breakpoint - 1) {
+        @content;
+    }
+}
+
+@mixin for-tablet-landscape-up {
+    @media (min-width: $grid-md-breakpoint) {
+        @content;
+    }
+}
+
+@mixin for-tablet-landscape-down {
+    @media (max-width: $grid-lg-breakpoint - 1) {
+        @content;
+    }
+}
+
+@mixin for-desktop-up {
+    @media (min-width: $grid-lg-breakpoint) {
+        @content;
+    }
+}
+
+@mixin for-desktop-down {
+    @media (max-width: $grid-lg-breakpoint - 1) {
+        @content;
+    }
+}
+
+@mixin for-big-desktop-up {
+    @media (min-width: $grid-xl-breakpoint) {
+        @content;
+    }
+}
+
+// usage example
+// .tablet-portrait-up {
+//     @include for-tablet-portrait-up { background: purple; }
+// }

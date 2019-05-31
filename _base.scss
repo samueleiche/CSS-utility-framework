@@ -15,10 +15,11 @@ body {
 
 body {
     margin: 0;
-    font-size: $base-font-size;
-    line-height: $base-line-height;
-    font-family: $font-family-primary, sans-serif;
-    color: $font-color-text;
+    font-size: $text-font-size-default;
+    line-height: $text-line-height;
+    font-weight: 400;
+    font-family: $text-font-family;
+    color: $text-font-color;
     text-align: left;
     background-color: $white;
 }
@@ -28,9 +29,9 @@ h2,
 h3,
 h4 {
     margin: 0 0 12px;
-    font-family: $font-family-heading, serif;
-    color: $font-color-heading;
-    line-height: 1.2em;
+    font-family: $heading-font-family;
+    color: $heading-font-color;
+    line-height: $heading-line-height;
 }
 
 iframe {
@@ -40,38 +41,38 @@ iframe {
 }
 
 h1 {
-    font-size: $font-size-h1;
+    font-size: $heading-font-size-h1;
 
-    &.bigger {
-        font-size: $font-size-h1 + 20px;
+    &.display {
+        font-size: $heading-font-size-h1 + 20px;
     }
 
-    &.smaller {
-        font-size: $font-size-h1 - 4px;
+    &.small {
+        font-size: $heading-font-size-h2;
     }
 }
 
 
 h2 {
-    font-size: $font-size-h2;
+    font-size: $heading-font-size-h2;
 }
 
 h3 {
-    font-size: $font-size-h3;
+    font-size: $heading-font-size-h3;
 }
 
 h4 {
-    font-size: $font-size-h4;
+    font-size: $heading-font-size-h4;
 
-    &.smaller {
-        font-size: $font-size-h4 - 4px;
+    &.small {
+        font-size: $text-font-size-default;
     }
 }
 
 a,
 .link-nostyle {
     text-decoration: none;
-    color: $font-color-link;
+    color: $text-link-font-color;
 
     &:hover {
         text-decoration: underline;
@@ -106,8 +107,13 @@ figure {
     margin: 0;
 }
 
+figcaption {
+    margin-top: 1.2rem;
+    font-size: $text-font-size-tiny;
+}
+
 img {
-    width: 100%;
+    max-width: 100%;
     height: auto;
     vertical-align: middle;
     border-style: none;
@@ -129,7 +135,6 @@ button,
     padding: 0;
     border: 0;
     border-radius: 0;
-    font-size: 1rem;
     background-color: transparent;
     background-image: none;
 }
