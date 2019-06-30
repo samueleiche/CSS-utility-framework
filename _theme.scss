@@ -9,15 +9,15 @@
 }
 
 .primary {
-    color: $primary;
+    color: $primary-text;
 }
 
 .accent {
-    color: $accent;
+    color: $accent-text;
 }
 
 .warn {
-    color: $warn;
+    color: $warn-text;
 }
 
 .muted {
@@ -28,10 +28,6 @@
     color: $gray;
 }
 
-.dark-gray {
-    color: $gray-dark;
-}
-
 
 // Background
 
@@ -39,6 +35,37 @@
     background-color: $white;
 }
 
+.bg-black {
+    background-color: $black;
+}
+
 .bg-primary {
     background-color: $primary;
+}
+
+.bg-accent {
+    background-color: $accent;
+}
+
+.bg-gray {
+    background-color: $gray;
+}
+
+
+// Border
+
+.border-white {
+    border-color: $white;
+}
+
+.border-gray {
+    border-color: $gray;
+}
+
+.border-primary {
+    border-color: $primary;
+}
+
+.border-muted {
+    border-color: lighten($muted, 20%);
 }

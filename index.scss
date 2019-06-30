@@ -1,9 +1,13 @@
 @import 'variables';
-@import 'mixins';
+
 // include normalize here
+
 @import 'base';
+
+// other components here
+
 @import 'theme';
 @import 'typography';
 @import 'images';
-@import 'utility';
+@import 'utilities';
 @import 'framework';

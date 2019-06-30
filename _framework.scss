@@ -87,27 +87,27 @@ $spacers: (
     }
 
     .full-height#{$size} {
-        height: 100% !important;
+        height: 100%;
     }
 
     .full-width#{$size} {
-        width: 100% !important;
+        width: 100%;
     }
 
     .auto-height#{$size} {
-        height: auto !important;
+        height: auto;
     }
 
     .auto-width#{$size} {
-        width: auto !important;
+        width: auto;
     }
 
     .relative#{$size} {
-        position: relative !important;
+        position: relative;
     }
 
     .absolute#{$size} {
-        position: absolute !important;
+        position: absolute;
     }
 
 
@@ -118,7 +118,11 @@ $spacers: (
         display: flex !important;
     }
 
-    .flex#{$size}-column {
+    .inline-flex#{$size} {
+        display: inline-flex !important;
+    }
+
+    .flex-#{$size}column {
         flex-direction: column;
     }
 
@@ -187,13 +191,13 @@ $spacers: (
         flex-grow: 0;
     }
 
-    // justify-self is not included because of poor cross-browser support
+    // justify-self classes are not included because of poor cross-browser support
 
-    .flex#{$size}-self-start {
+    .flex#{$size}-self-left {
         align-self: flex-start;
     }
 
-    .flex#{$size}-self-end {
+    .flex#{$size}-self-right {
         align-self: flex-end;
     }
 
@@ -224,6 +228,7 @@ $spacers: (
     // about auto margins:
     // https://css-tricks.com/the-peculiar-magic-of-flexbox-and-auto-margins/
     // in short - can be used for element alignment, buggy in IE 10/11
+
     .my#{$size}-auto {
         margin-top: auto;
         margin-bottom: auto;

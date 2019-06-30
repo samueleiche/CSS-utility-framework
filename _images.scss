@@ -27,11 +27,15 @@
     background-size: cover;
 }
 
+.image-bg-contain {
+    background-size: contain;
+}
+
 // Add breakpoints to image utilities
 
 @mixin make-images($size) {
     // fit image vertically
-    .image#{$size}-fit-y {
+    .image-fit#{$size}-y {
         img {
             max-height: 100%;
             width: auto;
@@ -40,7 +44,7 @@
     }
 
     // (default) fit image horizontally
-    .image#{$size}-fit-x {
+    .image-fit#{$size}-x {
         img {
             height: auto;
             max-width: 100%;

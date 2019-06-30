@@ -1,25 +1,41 @@
+.font-h1 {
+    font-size: $font-size-h1;
+}
+
+.font-h2 {
+    font-size: $font-size-h2;
+}
+
+.font-h3 {
+    font-size: $font-size-h3;
+}
+
+.font-h4 {
+    font-size: $font-size-h4;
+}
+
 .font-huge {
-    font-size: $text-font-size-huge;
+    font-size: $font-size-huge;
 }
 
 .font-large {
-    font-size: $text-font-size-large;
+    font-size: $font-size-large;
 }
 
 .font-big {
-    font-size: $text-font-size-big;
+    font-size: $font-size-big;
 }
 
 .font-normal {
-    font-size: $text-font-size-default;
+    font-size: $base-font-size;
 }
 
 .font-small {
-    font-size: $text-font-size-small;
+    font-size: $font-size-small;
 }
 
 .font-tiny {
-    font-size: $text-font-size-tiny;
+    font-size: $font-size-tiny;
 }
 
 .uppercase {
@@ -54,4 +70,8 @@ b,
 strong,
 .bold {
     font-weight: 700;
+}
+
+.break-word {
+    word-break: break-word;
 }

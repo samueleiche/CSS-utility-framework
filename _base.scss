@@ -15,11 +15,11 @@ body {
 
 body {
     margin: 0;
-    font-size: $text-font-size-default;
-    line-height: $text-line-height;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
     font-weight: 400;
-    font-family: $text-font-family;
-    color: $text-font-color;
+    font-family: $font-family-primary;
+    color: $font-color-text;
     text-align: left;
     background-color: $white;
 }
@@ -29,9 +29,10 @@ h2,
 h3,
 h4 {
     margin: 0 0 12px;
-    font-family: $heading-font-family;
-    color: $heading-font-color;
+    font-family: $font-family-heading;
     line-height: $heading-line-height;
+    color: $font-color-heading;
+    font-weight: 400;
 }
 
 iframe {
@@ -41,38 +42,54 @@ iframe {
 }
 
 h1 {
-    font-size: $heading-font-size-h1;
+    font-size: $font-size-h1-for-handset;
 
-    &.display {
-        font-size: $heading-font-size-h1 + 20px;
-    }
+    @media (min-width: $grid-lg-breakpoint) {
+        font-size: $font-size-h1;
 
-    &.small {
-        font-size: $heading-font-size-h2;
+        &.display {
+            font-size: $font-size-h1 + 10px;
+        }
+
+        &.small {
+            font-size: $font-size-h2;
+        }
     }
 }
 
-
 h2 {
-    font-size: $heading-font-size-h2;
+    font-size: $font-size-h2-for-handset;
+
+    @media (min-width: $grid-lg-breakpoint) {
+        font-size: $font-size-h2;
+    }
 }
 
 h3 {
-    font-size: $heading-font-size-h3;
+    font-size: $font-size-h3-for-handset;
+
+    @media (min-width: $grid-lg-breakpoint) {
+        font-size: $font-size-h3;
+    }
 }
 
 h4 {
-    font-size: $heading-font-size-h4;
+    font-size: $font-size-h4-for-handset;
 
-    &.small {
-        font-size: $text-font-size-default;
+    @media (min-width: $grid-lg-breakpoint) {
+        font-size: $font-size-h4;
+
+        &.small {
+            font-size: $base-font-size;
+        }
     }
+
 }
 
 a,
 .link-nostyle {
     text-decoration: none;
-    color: $text-link-font-color;
+    color: $font-color-link;
 
     &:hover {
         text-decoration: underline;
@@ -95,21 +112,22 @@ dl {
 
 svg {
     overflow: hidden;
-    vertical-align: middle;
+    // vertical-align: middle; // This also misaligns Voog editmode svg icons
 }
 
 table {
     border-collapse: collapse;
 }
 
-// use to contain the img with .image classes
+// Use to contain the img with .image classes
 figure {
     margin: 0;
+    text-align: center;
 }
 
 figcaption {
     margin-top: 1.2rem;
-    font-size: $text-font-size-tiny;
+    font-size: $font-size-tiny;
 }
 
 img {
@@ -168,4 +186,11 @@ nav {
 [hidden],
 [v-cloak] {
     display: none !important;
+}
+
+// Add dynamically to body -  remove outlines from button when clicked on / keep outline when tabbing
+.using-mouse {
+    button {
+        outline: none;
+    }
 }
