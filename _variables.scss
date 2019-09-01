@@ -1,90 +1,126 @@
 // Framework
+// --------------------------
 
-$grid-sm-breakpoint:        600px;
-$grid-md-breakpoint:        900px;
-$grid-lg-breakpoint:        1200px;
-$grid-xl-breakpoint:        1600px;
-
-$container-sm-max-width:    100%;
-$container-md-max-width:    $container-sm-max-width;
-$container-lg-max-width:    1150px;
-$container-xl-max-width:    1500px;
-
-$media-tiers:                   ('', '-sm', '-md', '-lg', '-xl');
-$media-map: (
-    0:                      null,
-    $grid-sm-breakpoint:    $container-sm-max-width,
-    $grid-md-breakpoint:    $container-md-max-width,
-    $grid-lg-breakpoint:    $container-lg-max-width,
-    $grid-xl-breakpoint:    $container-xl-max-width,
+// Media query map
+$mq-map: (
+    'sm': (
+        'breakpoint': 600px,
+        'container-max-width': 100%,
+        'class-prefix': sm\:,
+    ),
+    'md': (
+        'breakpoint': 960px,
+        'container-max-width': 100%,
+        'class-prefix': md\:,
+    ),
+    'lg': (
+        'breakpoint': 1264px,
+        'container-max-width': 1200px,
+        'class-prefix': lg\:,
+    ),
+    'xl': (
+        'breakpoint': 1600px,
+        'container-max-width': 1300px,
+        'class-prefix': xl\:,
+    ),
 );
+
+// Spacers for spacing and a few utility classes that have variants
+$spacer: 1rem;
+$spacers: (
+    0: 0,
+    1: ($spacer * .25),
+    2: ($spacer * .5),
+    3: $spacer,
+    4: ($spacer * 1.5),
+    5: ($spacer * 3),
+    6: ($spacer * 6),
+    7: ($spacer * 12)
+);
+
+// Container horizontal padding
+$gutter-width: 1rem;
+
 
 
 // Base
+// --------------------------
+$base-font-size: 16px;
 
-$black:                 #000;
-$white:                 #fff;
+// Ratio percentage = (ratio height / ratio width) * 100
+$ratios: (
+    '16:9': 56.25%,
+    '3:2':  66.66%,
+    '4:3':  75%,
+    '1:1':  100%,
+);
 
-$base-line-height:      1.5;
-$heading-line-height:   1.2;
-$base-font-size:        16px;
-
-$font-size-huge:        $base-font-size + 6px;
-$font-size-large:       $base-font-size + 4px;
-$font-size-big:         $base-font-size + 2px;
-$font-size-small:       $base-font-size - 2px;
-$font-size-tiny:        $base-font-size - 4px;
-
-// percentage = (ratio height / ratio width) * 100
-$image-ratio-16-9:      56.25%;
-$image-ratio-3-2:       66.66%;
-$image-ratio-4-3:       75%;
-$image-ratio-1-1:       100%;
 
 
 // Theme
+// --------------------------
+$color: (
+    'primary': (
+        'light':    #d9534f,
+        'base':     #8e3329,
+        'dark':     #c9302c,
+        'background': (
+            'base': rgba(#d9534f, .8),
+        ),
+    ),
+    'secondary': (
+        'light':    #7b1a2d,
+        'base':     #5a1321,
+        'dark':     #51111e,
+    ),
+    'warn': (
+        'base':     #f02101,
+    ),
+    'gray': (
+        'lightest': #eee,
+        'light':    #c8c8c8,
+        'base':     #909090,
+        'dark':     #646464,
+        'darkest':  #222,
+    ),
+);
 
-$primary:           #4caf50;
-$primary-darker:    darken($primary, 10%);
-$primary-text:      darken($primary, 6%);
+$font: (
+    'heading': (
+        'family':   unquote('Open Sans, sans-serif'),
+        'color':    get('gray.darkest', $color),
+        'weight':   500,
+        'height':   1.2,
+        'size': (
+            'h1': 50px,
+            'h2': 40px,
+            'h3': 30px,
+            'h4': 26px,
+        ),
+    ),
+    'text': (
+        'family':   unquote('Open Sans, sans-serif'),
+        'color':    get('gray.darkest', $color),
+        'height':   1.5,
+        'size': (
+            'largest':  $base-font-size + 6px,
+            'large':    $base-font-size + 4px,
+            'big':      $base-font-size + 2px,
+            'base':     $base-font-size,
+            'small':    $base-font-size - 2px,
+            'smallest': 12px,
+        ),
+    ),
+);
 
-$accent:            #4caf50;
-$accent-darker:     darken($accent, 10%);
-$accent-text:       darken($accent, 6%);
-
-$warn:              #f02101;
-$warn-darker:       darken($warn, 10%);
-$warn-text:         darken($warn, 6%);
-
-$gray:              #666;
-$muted:             $gray;
-$border-color:      $gray;
-$text-color:        $black;
-
-
-// Typography
-
-$font-family-heading:       'Open Sans', sans-serif;
-$font-family-primary:       'Open Sans', sans-serif;
-
-$font-color-heading:        $text-color;
-$font-color-text:           $text-color;
-$font-color-link:           $text-color;
-
-$font-size-h1:              50px;
-$font-size-h1-for-handset:  30px;
-$font-size-h2:              40px;
-$font-size-h2-for-handset:  30px;
-$font-size-h3:              30px;
-$font-size-h3-for-handset:  22px;
-$font-size-h4:              $font-size-h3;
-$font-size-h4-for-handset:  $font-size-h3;
 
 
 // Z-index guide for elements
-
-$zindex-dropdown:       1000 !default;
-$zindex-fixed:          1030 !default;
-$zindex-modal-backdrop: 1040 !default;
-$zindex-modal:          1050 !default;
-$zindex-popover:        1060 !default;
+// --------------------------
+$zindex: (
+    'dropdown':     1000,
+    'fixed':        1030,
+    'backdrop':     1040,
+    'modal':        1050,
+    'popover':      1060,
+);

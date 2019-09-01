@@ -1,13 +1,18 @@
+// Priority order:
+// functions/mixins > variables > base/reset > components > core utils > theme.
+
+@import 'core/functions/get';
 @import 'variables';
+@import 'core/base';
+@import 'core/transitions';
 
-// include normalize here
 
-@import 'base';
+// components here...
 
-// other components here
 
-@import 'theme';
-@import 'typography';
-@import 'images';
-@import 'utilities';
-@import 'framework';
+// @import 'core/utilities';
+@import 'core/images';
+@import 'core/buttons';
+@import 'theme/colors';
+@import 'theme/typography';
+@import 'core/core';

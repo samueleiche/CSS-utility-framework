@@ -1,0 +1,103 @@
+.font-h1 {
+    font-size: get('heading.size.h1', $font);
+}
+
+.font-h2 {
+    font-size: get('heading.size.h2', $font);
+}
+
+.font-h3 {
+    font-size: get('heading.size.h3', $font);
+}
+
+.font-h4 {
+    font-size: get('heading.size.h4', $font);
+}
+
+
+.font-largest {
+    font-size: get('text.size.largest', $font);
+}
+
+.font-large {
+    font-size: get('text.size.large', $font);
+}
+
+.font-big {
+    font-size: get('text.size.big', $font);
+}
+
+.font-normal {
+    font-size: get('text.size.base', $font);
+}
+
+.font-small {
+    font-size: get('text.size.small', $font);
+}
+
+.font-smallest {
+    font-size: get('text.size.smallest', $font);
+}
+
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.no-underline {
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+
+.font-400 {
+    font-weight: 400; // regular
+}
+
+.font-500 {
+    font-weight: 500; // medium
+}
+
+.font-600 {
+    font-weight: 600; // semibold
+}
+
+b,
+strong,
+.font-700 {
+    font-weight: 700; // bold
+}
+
+.font-800 {
+    font-weight: 800; // extra bold
+}
+
+
+.break-word {
+    word-break: break-word;
+}
+
+.no-wrap {
+    white-space: nowrap;
+}
+
+.truncate {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

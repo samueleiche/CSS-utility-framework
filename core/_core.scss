@@ -1,0 +1,383 @@
+$container-modifiers: ('', '-half');
+$max-columns: 12;
+
+@mixin flex-column($point: null) {
+    width: 100%;
+
+    // if $point is not defined, make equal columns
+    @if $point == null {
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: 100%;
+    } @else {
+        @if $point < 1 or $point > $max-columns {
+            @error 'Required range 1-#{$max-columns}, was #{$point}';
+        }
+
+        $percentage: percentage($point / $max-columns);
+
+        flex: 0 0 $percentage;
+        max-width: $percentage;
+    }
+}
+
+@mixin flex-column-offset($point) {
+    $percentage: 0;
+
+    @if $point != 0 {
+        $percentage: percentage($point / $max-columns);
+    }
+
+    margin-left: $percentage;
+}
+
+
+@mixin make-base-utilities($prefix: '') {
+    .#{$prefix}hidden {
+        display: none !important;
+    }
+
+    .#{$prefix}block {
+        display: block;
+    }
+
+    .#{$prefix}inline-block {
+        display: inline-block;
+    }
+
+    .#{$prefix}relative {
+        position: relative;
+    }
+
+    .#{$prefix}absolute {
+        position: absolute;
+    }
+
+    .#{$prefix}fixed {
+        position: fixed;
+    }
+
+    .#{$prefix}sticky {
+        position: sticky;
+    }
+
+
+    // Text utilities
+    // -------------------------
+
+    .#{$prefix}align-center {
+        text-align: center;
+    }
+
+    .#{$prefix}align-left {
+        text-align: left;
+    }
+
+    .#{$prefix}align-right {
+        text-align: right;
+    }
+}
+
+
+@mixin make-sizing-utilities($prefix: '') {
+    .#{$prefix}full-height {
+        height: 100%;
+    }
+
+    .#{$prefix}auto-height {
+        height: auto;
+    }
+
+    .#{$prefix}full-width {
+        width: 100%;
+    }
+
+    .#{$prefix}auto-width {
+        width: auto;
+    }
+}
+
+
+@mixin make-flex-utilities($prefix: '') {
+    // TODO: rename flex utils
+    .#{$prefix}flex {
+        display: flex;
+    }
+
+    .#{$prefix}inline-flex {
+        display: inline-flex;
+    }
+
+    .#{$prefix}flex-column {
+        flex-direction: column;
+    }
+
+    .#{$prefix}flex-row {
+        flex-direction: row;
+    }
+
+    .#{$prefix}flex-top {
+        align-items: flex-start;
+    }
+
+    .#{$prefix}flex-bottom {
+        align-items: flex-end;
+    }
+
+    .#{$prefix}flex-right {
+        justify-content: flex-end;
+    }
+
+    .#{$prefix}flex-left {
+        justify-content: flex-start;
+    }
+
+    .#{$prefix}space-between {
+        justify-content: space-between;
+    }
+
+    .#{$prefix}flex-y-center {
+        align-items: center;
+    }
+
+    .#{$prefix}flex-x-center {
+        justify-content: center;
+    }
+
+    .#{$prefix}flex-center {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .#{$prefix}flex-wrap {
+        flex-wrap: wrap;
+    }
+
+    .#{$prefix}flex-wrap-reverse {
+        flex-wrap: wrap-reverse;
+    }
+
+    .#{$prefix}flex-nowrap {
+        flex-wrap: nowrap;
+    }
+
+    .#{$prefix}flex-shrink {
+        flex-shrink: 1;
+    }
+
+    .#{$prefix}flex-noshrink {
+        flex-shrink: 0;
+    }
+
+    .#{$prefix}flex-grow {
+        flex-grow: 1;
+    }
+
+    .#{$prefix}flex-nogrow {
+        flex-grow: 0;
+    }
+
+    // justify-self classes are not included because of poor cross-browser support
+
+    .#{$prefix}flex-self-left {
+        align-self: flex-start;
+    }
+
+    .#{$prefix}flex-self-right {
+        align-self: flex-end;
+    }
+
+    .#{$prefix}flex-self-center {
+        align-self: center;
+    }
+}
+
+
+@mixin make-spacers($prefix: '') {
+    // About auto margins:
+    // https://css-tricks.com/the-peculiar-magic-of-flexbox-and-auto-margins/
+    // in short - can be used for element alignment, buggy in IE 10/11
+
+    .#{$prefix}my-auto {
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .#{$prefix}mx-auto {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .#{$prefix}mt-auto {
+        margin-top: auto;
+    }
+
+    .#{$prefix}mr-auto {
+        margin-right: auto;
+    }
+
+    .#{$prefix}mb-auto {
+        margin-bottom: auto;
+    }
+
+    .#{$prefix}ml-auto {
+        margin-left: auto;
+    }
+
+    @each $i, $length in $spacers {
+        .#{$prefix}m-#{$i} {
+            margin: $length;
+        }
+
+        // negative margins
+        @if ($i != 0) {
+            .#{$prefix}mt-n#{$i} {
+                margin-top: -$length;
+            }
+
+            .#{$prefix}mr-n#{$i} {
+                margin-right: -$length;
+            }
+
+            .#{$prefix}mb-n#{$i} {
+                margin-bottom: -$length;
+            }
+
+            .#{$prefix}ml-n#{$i} {
+                margin-left: -$length;
+            }
+        }
+
+        .#{$prefix}mt-#{$i} {
+            margin-top: $length;
+        }
+
+        .#{$prefix}mr-#{$i} {
+            margin-right: $length;
+        }
+
+        .#{$prefix}mb-#{$i} {
+            margin-bottom: $length;
+        }
+
+        .#{$prefix}ml-#{$i} {
+            margin-left: $length;
+        }
+
+        .#{$prefix}mx-#{$i} {
+            margin-left: $length;
+            margin-right: $length;
+        }
+
+        .#{$prefix}my-#{$i} {
+            margin-top: $length;
+            margin-bottom: $length;
+        }
+
+        .#{$prefix}p-#{$i} {
+            padding: $length;
+        }
+
+        .#{$prefix}pt-#{$i} {
+            padding-top: $length;
+        }
+
+        .#{$prefix}pr-#{$i} {
+            padding-right: $length;
+        }
+
+        .#{$prefix}pb-#{$i} {
+            padding-bottom: $length;
+        }
+
+        .#{$prefix}pl-#{$i} {
+            padding-left: $length;
+        }
+
+        .#{$prefix}px-#{$i} {
+            padding-left: $length;
+            padding-right: $length;
+        }
+
+        .#{$prefix}py-#{$i} {
+            padding-top: $length;
+            padding-bottom: $length;
+        }
+    }
+}
+
+
+@mixin make-flex-columns($prefix: '') {
+    .#{$prefix}flex-equal {
+        @include flex-column;
+    }
+
+    .#{$prefix}flex-auto {
+        flex: 0 0 auto;
+        width: auto;
+        max-width: none;
+    }
+
+    .#{$prefix}flex-order-first {
+        order: -1;
+    }
+
+    .#{$prefix}flex-order-last {
+        order: $max-columns + 1;
+    }
+
+    @for $i from 1 through $max-columns {
+        .#{$prefix}flex-#{$i} {
+            @include flex-column($i);
+        }
+
+        .#{$prefix}flex-order-#{$i} {
+            order: $i;
+        }
+
+        .#{$prefix}flex-offset-#{$i - 1} {
+            @include flex-column-offset($i - 1);
+        }
+    }
+}
+
+
+@mixin make-containers {
+    .container {
+        padding-right: $gutter-width;
+        padding-left: $gutter-width;
+        margin-right: auto;
+        margin-left: auto;
+
+        @each $key, $mq in $mq-map {
+            @media (min-width: map-get($mq, 'breakpoint')) {
+                max-width: map-get($mq, 'container-max-width');
+            }
+        }
+    }
+}
+
+
+@mixin build-core() {
+    @include make-containers;
+
+    @include make-base-utilities();
+    @include make-flex-utilities();
+    @include make-flex-columns();
+    @include make-spacers();
+    @include make-sizing-utilities();
+
+    @each $key, $mq in $mq-map {
+        $prefix: map-get($mq, 'class-prefix');
+
+        @media (min-width: map-get($mq, 'breakpoint')) {
+            @include make-base-utilities($prefix);
+            @include make-flex-utilities($prefix);
+            @include make-flex-columns($prefix);
+            @include make-spacers($prefix);
+            @include make-sizing-utilities($prefix);
+        }
+    }
+}
+
+@include build-core();

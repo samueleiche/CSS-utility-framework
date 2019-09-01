@@ -1,0 +1,178 @@
+// Base styles inspired by Bootstrap and Normalize.css
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: get('text.size.base', $font);
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    line-height: get('text.height', $font);
+    font-family: get('text.family', $font);
+    color: get('gray.darkest', $color);
+    background-color: white;
+
+    // Add dynamically to body - remove outlines from inputs when clicked on / keep outline when tabbing
+    &:not(.using-keyboard) {
+        button,
+        textarea,
+        input {
+            outline: none;
+        }
+    }
+
+    &.active-overlay {
+        overflow-y: scroll;
+        position: fixed;
+    }
+}
+
+h1,
+h2,
+h3,
+h4 {
+    margin: 0 0 12px;
+    font-family: get('heading.family', $font);
+    line-height: get('heading.height', $font);
+    color: get('gray.darkest', $color);
+    font-weight: get('heading.weight', $font);
+}
+
+h1 {
+    font-size: get('heading.size.h1', $font);
+}
+
+h2 {
+    font-size: get('heading.size.h2', $font);
+}
+
+h3 {
+    font-size: get('heading.size.h3', $font);
+}
+
+h4 {
+    font-size: get('heading.size.h4', $font);
+}
+
+a,
+.link-nostyle {
+    text-decoration: none;
+    color: get('gray.darkest', $color);
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+p,
+ol,
+ul,
+dl {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.list-nostyle {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+svg {
+    overflow: hidden;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+iframe {
+    display: block;
+    border: 0;
+    width: 100%;
+}
+
+// Use to contain the img with .image classes
+figure {
+    margin: 0;
+    text-align: center;
+}
+
+figcaption {
+    margin-top: 1.2rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    border-style: none;
+}
+
+input,
+button,
+select,
+optgroup,
+textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+button,
+input[type='button'],
+input[type='submit'],
+.button-nostyle {
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background-color: transparent;
+    background-image: none;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    appearance: none;
+}
+
+textarea {
+    overflow: auto;
+    resize: vertical;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: .5rem;
+}
+
+template {
+    display: none;
+}
+
+main,
+section,
+aside,
+article,
+header,
+footer,
+nav {
+    display: block;
+}
+
+// [v-cloak] - Vue.js element attribute that gets removed after mount.
+// Use to hide pre-mounted content.
+[hidden],
+[v-cloak] {
+    display: none !important;
+}

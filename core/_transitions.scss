@@ -1,0 +1,63 @@
+// Vue.js transitions
+
+// general fade transition
+.v-fade-enter-active {
+    animation: fade 160ms;
+}
+
+.v-fade-leave-active {
+    animation: fade 160ms reverse;
+}
+
+// scale transitioning for overlays and dropdowns
+.v-scale-from-top-right-enter-active,
+.v-scale-from-top-right-leave-active {
+    transform-origin: 100% 0%;
+}
+
+.v-scale-from-top-left-enter-active,
+.v-scale-from-top-left-leave-active {
+    transform-origin: 0% 0%;
+}
+
+.v-scale-from-top-right-enter-active,
+.v-scale-from-top-right-leave-active,
+.v-scale-from-top-left-enter-active,
+.v-scale-from-top-left-leave-active {
+    transition: opacity 284ms cubic-bezier(.4, 0, .2, 1) 0ms, transform 189ms cubic-bezier(.4, 0, .2, 1) 0ms;
+}
+
+.v-scale-from-top-right-leave-to,
+.v-scale-from-top-right-enter,
+.v-scale-from-top-left-leave-to,
+.v-scale-from-top-left-enter {
+    transform: scale(0);
+    opacity: 0;
+}
+
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+// hardware accelerate height transition
+.will-change-height {
+    will-change: height;
+}
