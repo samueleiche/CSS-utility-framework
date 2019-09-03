@@ -1,36 +1,4 @@
-$container-modifiers: ('', '-half');
 $max-columns: 12;
-
-@mixin flex-column($point: null) {
-    width: 100%;
-
-    // if $point is not defined, make equal columns
-    @if $point == null {
-        flex-basis: 0;
-        flex-grow: 1;
-        max-width: 100%;
-    } @else {
-        @if $point < 1 or $point > $max-columns {
-            @error 'Required range 1-#{$max-columns}, was #{$point}';
-        }
-
-        $percentage: percentage($point / $max-columns);
-
-        flex: 0 0 $percentage;
-        max-width: $percentage;
-    }
-}
-
-@mixin flex-column-offset($point) {
-    $percentage: 0;
-
-    @if $point != 0 {
-        $percentage: percentage($point / $max-columns);
-    }
-
-    margin-left: $percentage;
-}
-
 
 @mixin make-base-utilities($prefix: '') {
     .#{$prefix}hidden {
@@ -44,6 +12,7 @@ $max-columns: 12;
     .#{$prefix}inline-block {
         display: inline-block;
     }
+
 
     .#{$prefix}relative {
         position: relative;
@@ -62,18 +31,15 @@ $max-columns: 12;
     }
 
 
-    // Text utilities
-    // -------------------------
-
-    .#{$prefix}align-center {
+    .#{$prefix}text-center {
         text-align: center;
     }
 
-    .#{$prefix}align-left {
+    .#{$prefix}text-left {
         text-align: left;
     }
 
-    .#{$prefix}align-right {
+    .#{$prefix}text-right {
         text-align: right;
     }
 }
@@ -99,7 +65,6 @@ $max-columns: 12;
 
 
 @mixin make-flex-utilities($prefix: '') {
-    // TODO: rename flex utils
     .#{$prefix}flex {
         display: flex;
     }
@@ -114,39 +79,6 @@ $max-columns: 12;
 
     .#{$prefix}flex-row {
         flex-direction: row;
-    }
-
-    .#{$prefix}flex-top {
-        align-items: flex-start;
-    }
-
-    .#{$prefix}flex-bottom {
-        align-items: flex-end;
-    }
-
-    .#{$prefix}flex-right {
-        justify-content: flex-end;
-    }
-
-    .#{$prefix}flex-left {
-        justify-content: flex-start;
-    }
-
-    .#{$prefix}space-between {
-        justify-content: space-between;
-    }
-
-    .#{$prefix}flex-y-center {
-        align-items: center;
-    }
-
-    .#{$prefix}flex-x-center {
-        justify-content: center;
-    }
-
-    .#{$prefix}flex-center {
-        justify-content: center;
-        align-items: center;
     }
 
     .#{$prefix}flex-wrap {
@@ -177,23 +109,92 @@ $max-columns: 12;
         flex-grow: 0;
     }
 
-    // justify-self classes are not included because of poor cross-browser support
+    // flexbox playground https://the-echoplex.net/flexyboxes/
+    // Utilities for controlling how flex items are positioned along a container's main axis (horizontally)
+    .#{$prefix}justify-start {
+        justify-content: flex-start;
+    }
 
-    .#{$prefix}flex-self-left {
+    .#{$prefix}justify-center {
+        justify-content: center;
+    }
+
+    .#{$prefix}justify-end {
+        justify-content: flex-end;
+    }
+
+    .#{$prefix}justify-between {
+        justify-content: space-between;
+    }
+
+    .#{$prefix}justify-around {
+        justify-content: space-around;
+    }
+
+    // Utilities for controlling how lines are positioned in multi-line flex containers
+    .#{$prefix}content-start {
+        align-content: flex-start;
+    }
+
+    .#{$prefix}content-center {
+        align-content: center;
+    }
+
+    .#{$prefix}content-end {
+        align-content: flex-end;
+    }
+
+    .#{$prefix}content-between {
+        align-content: space-between;
+    }
+
+    .#{$prefix}content-around {
+        align-content: space-around;
+    }
+
+    // Utilities for controlling how flex items are positioned along a container's cross axis
+    .#{$prefix}items-stretch {
+        align-items: stretch;
+    }
+
+    .#{$prefix}items-start {
+        align-items: flex-start;
+    }
+
+    .#{$prefix}items-center {
+        align-items: center;
+    }
+
+    .#{$prefix}items-end {
+        align-items: flex-end;
+    }
+
+    // Utilities for controlling how an individual flex item is positioned along its container's cross axis
+    .#{$prefix}self-start {
         align-self: flex-start;
     }
 
-    .#{$prefix}flex-self-right {
+    .#{$prefix}self-center {
+        align-self: center;
+    }
+
+    .#{$prefix}self-end {
         align-self: flex-end;
     }
 
-    .#{$prefix}flex-self-center {
-        align-self: center;
+    .#{$prefix}self-auto {
+        align-self: auto; // Computes to the parent's align-items value
+    }
+
+
+    .#{$prefix}flexy-center {
+        justify-content: center;
+        align-items: center;
     }
 }
 
 
-@mixin make-spacers($prefix: '') {
+@mixin make-spacer-utilities($prefix: '') {
     // About auto margins:
     // https://css-tricks.com/the-peculiar-magic-of-flexbox-and-auto-margins/
     // in short - can be used for element alignment, buggy in IE 10/11
@@ -307,35 +308,67 @@ $max-columns: 12;
 }
 
 
-@mixin make-flex-columns($prefix: '') {
-    .#{$prefix}flex-equal {
-        @include flex-column;
+@mixin flexy-column($point: null) {
+    width: 100%;
+
+    // if $point is not defined, make equal columns
+    @if $point == null {
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: 100%;
+    } @else {
+        @if $point < 1 or $point > $max-columns {
+            @error 'Required range 1-#{$max-columns}, was #{$point}';
+        }
+
+        $percentage: percentage($point / $max-columns);
+
+        flex: 0 0 $percentage;
+        max-width: $percentage;
+    }
+}
+
+
+@mixin flex-column-offset($point) {
+    $percentage: 0;
+
+    @if $point != 0 {
+        $percentage: percentage($point / $max-columns);
     }
 
-    .#{$prefix}flex-auto {
+    margin-left: $percentage;
+}
+
+
+@mixin make-flexy-columns($prefix: '') {
+    .#{$prefix}flexy-equal {
+        @include flexy-column;
+    }
+
+    .#{$prefix}flexy-auto {
         flex: 0 0 auto;
         width: auto;
         max-width: none;
     }
 
-    .#{$prefix}flex-order-first {
+    .#{$prefix}order-first {
         order: -1;
     }
 
-    .#{$prefix}flex-order-last {
+    .#{$prefix}order-last {
         order: $max-columns + 1;
     }
 
     @for $i from 1 through $max-columns {
-        .#{$prefix}flex-#{$i} {
-            @include flex-column($i);
+        .#{$prefix}flexy-#{$i} {
+            @include flexy-column($i);
         }
 
-        .#{$prefix}flex-order-#{$i} {
+        .#{$prefix}order-#{$i} {
             order: $i;
         }
 
-        .#{$prefix}flex-offset-#{$i - 1} {
+        .#{$prefix}offset-#{$i - 1} {
             @include flex-column-offset($i - 1);
         }
     }
@@ -362,9 +395,9 @@ $max-columns: 12;
     @include make-containers;
 
     @include make-base-utilities();
+    @include make-flexy-columns();
     @include make-flex-utilities();
-    @include make-flex-columns();
-    @include make-spacers();
+    @include make-spacer-utilities();
     @include make-sizing-utilities();
 
     @each $key, $mq in $mq-map {
@@ -372,9 +405,9 @@ $max-columns: 12;
 
         @media (min-width: map-get($mq, 'breakpoint')) {
             @include make-base-utilities($prefix);
+            @include make-flexy-columns($prefix);
             @include make-flex-utilities($prefix);
-            @include make-flex-columns($prefix);
-            @include make-spacers($prefix);
+            @include make-spacer-utilities($prefix);
             @include make-sizing-utilities($prefix);
         }
     }

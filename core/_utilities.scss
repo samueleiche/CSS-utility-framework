@@ -24,25 +24,25 @@
     left: 0;
 }
 
-.inset-top {
+.inset-t {
     top: 0;
     right: 0;
     left: 0;
 }
 
-.inset-right {
+.inset-r {
     top: 0;
     right: 0;
     bottom: 0;
 }
 
-.inset-bottom {
+.inset-b {
     right: 0;
     bottom: 0;
     left: 0;
 }
 
-.inset-left {
+.inset-l {
     top: 0;
     bottom: 0;
     left: 0;
@@ -103,7 +103,7 @@
     border-radius: 9999px;
 }
 
-// TODO: support for theme colored box shadows
+
 elevation-1 {
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06);
 }
