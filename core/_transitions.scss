@@ -57,7 +57,11 @@
 }
 
 
-// hardware accelerate height transition
+// hardware acceleration
 .will-change-height {
     will-change: height;
+}
+
+.will-change-transform {
+    will-change: transform;
 }

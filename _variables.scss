@@ -55,26 +55,34 @@ $ratios: (
     '1:1':  100%,
 );
 
+$transition: (
+    'timing': (
+        'base-1': 160ms,
+        'base-2': 200ms,
+    ),
+);
+
 
 
 // Theme
 // --------------------------
 $color: (
     'primary': (
-        'light':    #d9534f,
-        'base':     #8e3329,
-        'dark':     #c9302c,
+        'light':    #6877ca,
+        'base':     #3f51b5,
+        'dark':     #2e3b84,
+        'darkest':  #293475,
         'background': (
-            'base': rgba(#d9534f, .8),
+            'base': rgba(#3f51b5, .8),
         ),
     ),
     'secondary': (
-        'light':    #7b1a2d,
-        'base':     #5a1321,
-        'dark':     #51111e,
+        'light':    #ef5d8d,
+        'base':     #e91e63,
+        'dark':     #ba124a,
     ),
     'warn': (
-        'base':     #f02101,
+        'base':     #c73d28,
     ),
     'gray': (
         'lightest': #eee,
@@ -87,19 +95,20 @@ $color: (
 
 $font: (
     'heading': (
-        'family':   unquote('Open Sans, sans-serif'),
+        'family':   unquote('Roboto, sans-serif'),
         'color':    get('gray.darkest', $color),
         'weight':   500,
         'height':   1.2,
         'size': (
-            'h1': 50px,
-            'h2': 40px,
-            'h3': 30px,
-            'h4': 26px,
+            'h1-display': 96px,
+            'h1': 60px,
+            'h2': 48px,
+            'h3': 34px,
+            'h4': 24px,
         ),
     ),
     'text': (
-        'family':   unquote('Open Sans, sans-serif'),
+        'family':   unquote('Roboto, sans-serif'),
         'color':    get('gray.darkest', $color),
         'height':   1.5,
         'size': (
@@ -113,6 +122,15 @@ $font: (
     ),
 );
 
+$shadow: (
+    'base': (
+        'z1': unquote('0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06)'),
+        'z2': unquote('0 4px 6px -1px rgba(0, 0, 0, .1), 0 2px 4px -1px rgba(0, 0, 0, .06)'),
+        'z3': unquote('0 10px 15px -3px rgba(0, 0, 0, .1), 0 4px 6px -2px rgba(0, 0, 0, .05)'),
+        'z4': unquote('0 20px 25px -5px rgba(0, 0, 0, .1), 0 10px 10px -5px rgba(0, 0, 0, .04)'),
+        'z5': unquote('0 25px 50px -12px rgba(0, 0, 0, .25)'),
+    ),
+);
 
 
 // Z-index guide for elements

@@ -1,0 +1,67 @@
+@mixin button-variant($color-text, $color-key) {
+    $variant-base: get('#{$color-key}.base', $color);
+    $variant-dark: get('#{$color-key}.dark', $color);
+    $variant-darkest: get('#{$color-key}.darkest', $color);
+    $disabled-color: get('gray.light', $color);
+
+    color: $color-text;
+    background-color: $variant-base;
+    border-color: $variant-base;
+
+    &:focus {
+        background-color: $variant-dark;
+        border-color: $variant-dark;
+    }
+
+    &:hover {
+        background-color: $variant-dark;
+        border-color: $variant-dark;
+    }
+
+    &:active {
+        background-color: $variant-darkest;
+        border-color: $variant-darkest;
+    }
+
+    &:disabled,
+    &.disabled {
+        &,
+        &:hover,
+        &:active,
+        &:focus {
+            border-color: $disabled-color;
+            background-color: $disabled-color;
+        }
+    }
+
+    &.button-outlined {
+        color: $variant-base;
+        border-color: currentColor;
+
+        &,
+        &:hover,
+        &:active,
+        &:focus {
+            color: $variant-base;
+            background-color: rgba(0, 0, 0, 0);
+        }
+
+        &:hover {
+            background-color: rgba($variant-base, .15);
+        }
+
+        &:active {
+            color: white;
+            background-color: $variant-base;
+            border-color: $variant-base;
+        }
+    }
+}
+
+
+@mixin button-size($min-width, $min-height, $padding-vertical, $font-size) {
+    min-width: $min-width;
+    min-height: $min-height;
+    padding: 0 $padding-vertical;
+    font-size: $font-size;
+}
