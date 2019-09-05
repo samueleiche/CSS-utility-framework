@@ -104,23 +104,23 @@
 }
 
 
-elevation-1 {
+.elevation-1 {
     box-shadow: get('base.z1', $shadow);
 }
 
-elevation-2 {
+.elevation-2 {
     box-shadow: get('base.z2', $shadow);
 }
 
-elevation-3 {
+.elevation-3 {
     box-shadow: get('base.z3', $shadow);
 }
 
-elevation-4 {
+.elevation-4 {
     box-shadow: get('base.z4', $shadow);
 }
 
-elevation-5 {
+.elevation-5 {
     box-shadow: get('base.z5', $shadow);
 }
 

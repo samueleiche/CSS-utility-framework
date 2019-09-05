@@ -1,0 +1,108 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="index.css" rel="stylesheet">
+
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+
+    <style>
+        html {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container py-5">
+        <div id="buttons" class="flex flex-wrap justify-around items-center py-5">
+            <button type="button" class="button button-icon-left">
+                <i class="fa fa-pencil"></i>
+                Iconed
+            </button>
+
+            <button type="button" class="button button-icon-left button-primary">
+                <i class="fa fa-pencil"></i>
+                Iconed
+            </button>
+
+            <button type="button" class="button button-primary button-flat">
+                Flat
+            </button>
+
+            <button type="button" class="button button-primary button-outlined">
+                Outlined
+            </button>
+
+            <button type="button" class="button button-primary" disabled>
+                Disabled
+            </button>
+
+            <button type="button" class="button button-primary button-big">
+                Big Button
+            </button>
+        </div>
+
+        <div id="images" class="flex flex-wrap justify-around py-5">
+            <div class="flexy-12 md:flexy-4 flex flex-column justify-center">
+                <p class="font-700 text-center">16x9</p>
+
+                <figure class="image image-16x9">
+                    <img src="https://picsum.photos/800/800" alt="Lorem Picsum">
+                </figure>
+            </div>
+
+            <div class="flexy-12 md:flexy-4">
+                <p class="font-700 text-center">1x1</p>
+
+                <figure class="image image-1x1">
+                    <img src="https://picsum.photos/800/800" alt="Lorem Picsum">
+                </figure>
+            </div>
+        </div>
+
+        <div id="cards" class="flex flex-wrap justify-around items-center py-5">
+            <article class="flexy-12 md:flexy-3 elevation-2">
+                <header>
+                    <figure class="image image-16x9">
+                        <img src="https://picsum.photos/800/800" alt="Lorem Picsum">
+                    </figure>
+
+                    <div class="px-3 pt-1 mb-0 mr-n1 ml-n1">
+                        <span class="inline-block px-1 font-smallest gray">Lorem ipsum</span>
+                        <span class="inline-block px-1 font-smallest gray">Lorem ipsum</span>
+                    </div>
+                </header>
+
+                <h4 class="black px-3 mt-1">Lorem ipsum dolor</h4>
+
+                <p class="px-3">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore perferendis veniam, aperiam
+                    quam esse veritatis ut, pariatur enim provident suscipit natus voluptates
+                </p>
+
+                <footer class="font-smallest px-3 py-3 border-gray border-top text-right uppercase">
+                    Lorem ipsum dolor sit
+                </footer>
+            </article>
+
+            <article class="flex flex-wrap flexy-12 md:flexy-5 elevation-2 p-3">
+                <div class="flexy-3 flex-noshrink">
+                    <figure class="image image-1x1 rounded-full">
+                        <img src="https://picsum.photos/800/800" alt="Lorem Picsum">
+                    </figure>
+                </div>
+
+                <div class="flexy-9 pl-3">
+                    <h4 class="black">Lorem ipsum dolor</h4>
+
+                    <p class="mb-0">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore perferendis veniam, aperiam
+                        quam esse veritatis ut, pariatur enim provident suscipit natus voluptates
+                    </p>
+                </div>
+            </article>
+        </div>
+    </div>
+</body>

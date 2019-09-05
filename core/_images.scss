@@ -60,7 +60,7 @@
     }
 
     .#{$size}image-16x9 {
-        padding-bottom: map-get($ratios, '16:3');
+        padding-bottom: map-get($ratios, '16:9');
     }
 
     .#{$size}image-1x1 {
