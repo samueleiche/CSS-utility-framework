@@ -92,8 +92,12 @@ strong,
     word-break: break-word;
 }
 
-.no-wrap {
+.text-nowrap {
     white-space: nowrap;
+}
+
+.text-wrap {
+    white-space: normal;
 }
 
 .truncate {
