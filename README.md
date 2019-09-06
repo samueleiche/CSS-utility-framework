@@ -1,15 +1,15 @@
 # Lightweight CSS utility-first framework
 
-Inspired by Bootstrap grid and [Tailwindcss](https://github.com/tailwindcss/tailwindcss).
+Inspired by [Bootstrap grid](https://github.com/twbs/bootstrap) and 
+[Tailwindcss](https://github.com/tailwindcss/tailwindcss).
 
 ## Usage Examples
 
 
 ### Variables
 
-A deep map helper function `get()` ([credits](https://itnext.io/advanced-use-of-sass-maps-bd5a47ca0d1a))
+A deep map helper function `get()` ([source](https://itnext.io/advanced-use-of-sass-maps-bd5a47ca0d1a))
 allows us to retrieve nested map keys easily:
-
 ```scss
 $font: (
     'heading': (
@@ -31,7 +31,6 @@ $font: (
 ### Flexy classes
 
 *Flexy* classes are compound flex utilities that have more than one property.
-
 ```scss
 .flexy-center {
     justify-content: center;
@@ -46,9 +45,8 @@ $font: (
 }
 
 .flexy-auto {
-    width: 100%;
-    flex: 0 0 auto;
     width: auto;
+    flex: 0 0 auto;
     max-width: none;
 }
 
@@ -62,9 +60,9 @@ $font: (
 
 ### Responsive Classes
 
-To add a utility but only have it take effect at a certain breakpoint, all you need to do is prefix
-the utility with the breakpoint name, followed by the : character:
-
+To add a utility but only have it take effect at a certain breakpoint, all you
+need to do is prefix the utility with the breakpoint name, followed by
+the : character:
 ```html
 <div class="flex flex-wrap justify-center">
     <div class="flex-12 md:flex-6 lg:flex-4"></div>
@@ -72,9 +70,9 @@ the utility with the breakpoint name, followed by the : character:
     <div class="flex-12 md:flex-6 lg:flex-4"></div>
 </div>
 ```
-**This does not work for every utility class in the framework**.
-
-The classes are designed for a mobile first breakpoint system, similar to Bootstrap, Foundation, Tailwind.
+**This does not work for every utility class in the framework.**  
+The classes are designed for a mobile first breakpoint system, similar to
+Bootstrap, Foundation, Tailwind.
 
 
 ### Core Components
@@ -101,8 +99,7 @@ Buttons:
 
 ### Typography
 
-Basic text utilities
-
+Basic text utilities:
 ```html
 <article>
     <header>
