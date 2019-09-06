@@ -1,0 +1,21 @@
+{
+    "name": "css-utility-framework",
+    "version": "1.0.0",
+    "scripts": {
+        "dev": "node-sass --watch index.scss -o dist/",
+        "prebuild": "node-sass index.scss -o dist/",
+        "build": "npm run prebuild && postcss dist/index.css -u autoprefixer cssnano -r --map=false"
+    },
+    "browserslist": [
+        "> 1%",
+        "last 2 versions",
+        "not ie <= 8"
+    ],
+    "devDependencies": {
+        "autoprefixer": "^9.6.1",
+        "cssnano": "^4.1.10",
+        "node-sass": "^4.12.0",
+        "postcss": "^7.0.18",
+        "postcss-cli": "^6.1.3"
+    }
+}
