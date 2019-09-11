@@ -2,9 +2,9 @@
     "name": "css-utility-framework",
     "version": "1.0.0",
     "scripts": {
-        "dev": "node-sass --watch index.scss -o dist/",
-        "prebuild": "node-sass index.scss -o dist/",
-        "build": "npm run prebuild && postcss dist/index.css -u autoprefixer cssnano -r --map=false"
+        "dev": "node-sass --watch style.scss -o dist/",
+        "prebuild": "node-sass style.scss -o dist/",
+        "build": "npm run prebuild && postcss dist/style.css -u autoprefixer cssnano -r --map=false"
     },
     "browserslist": [
         "> 1%",
