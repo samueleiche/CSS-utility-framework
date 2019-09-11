@@ -12,10 +12,6 @@
     color: get('primary.base', $color);
 }
 
-.secondary {
-    color: get('secondary.base', $color);
-}
-
 .warn {
     color: get('warn.base', $color);
 }
@@ -38,10 +34,6 @@
 
 .bg-primary {
     background-color: get('primary.base', $color);
-}
-
-.bg-accent {
-    background-color: get('secondary.base', $color);
 }
 
 .bg-gray {
