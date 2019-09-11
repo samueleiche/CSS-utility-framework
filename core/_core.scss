@@ -85,6 +85,10 @@ $max-columns: 12;
         flex-direction: row;
     }
 
+    .#{$prefix}flex-row-reverse {
+        flex-direction: row-reverse;
+    }
+
     .#{$prefix}flex-wrap {
         flex-wrap: wrap;
     }
