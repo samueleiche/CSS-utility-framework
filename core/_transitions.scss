@@ -36,6 +36,17 @@
 }
 
 
+// lazy-loading blur effect
+.lazy-image {
+    filter: blur(10px);
+    transition: filter .7s;
+}
+
+.lazy-image-loaded {
+    filter: blur(0);
+}
+
+
 @keyframes fade {
     0% {
         opacity: 0;

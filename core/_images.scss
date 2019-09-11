@@ -19,6 +19,7 @@
     }
 }
 
+
 .bg-image {
     width: 100%;
     height: 100%;
@@ -30,6 +31,7 @@
 .bg-contain {
     background-size: contain;
 }
+
 
 @mixin make-image-classes($size: '') {
     // fit image to container
@@ -68,6 +70,17 @@
     }
 
     // add more ratios if needed...
+}
+
+
+// stretch lazy-loading image placeholder to fit container
+.lazy-image {
+    &:not(.lazy-image-loaded) {
+        max-height: none;
+        max-width: none;
+        width: 100%;
+        height: 100%;
+    }
 }
 
 
