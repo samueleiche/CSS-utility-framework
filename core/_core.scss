@@ -54,6 +54,10 @@ $max-columns: 12;
         height: auto;
     }
 
+    .#{$prefix}screen-height {
+        height: 100vh;
+    }
+
     .#{$prefix}full-width {
         width: 100%;
     }
