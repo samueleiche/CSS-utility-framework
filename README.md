@@ -1,6 +1,6 @@
 # Lightweight CSS utility-first framework
 
-Inspired by [Bootstrap grid](https://github.com/twbs/bootstrap) and 
+Inspired by [Bootstrap grid](https://github.com/twbs/bootstrap) and
 [Tailwindcss](https://github.com/tailwindcss/tailwindcss).
 
 ## Usage Examples
@@ -22,7 +22,7 @@ $font: (
 
 );
 
-.display-heading {
+.display-h1 {
     font-size: get('heading.size.h1-display', $font);
 }
 ```
@@ -70,7 +70,7 @@ the : character:
     <div class="flex-12 md:flex-6 lg:flex-4"></div>
 </div>
 ```
-**This does not work for every utility class in the framework.**  
+**This does not work for every utility class in the framework.**
 The classes are designed for a mobile first breakpoint system, similar to
 Bootstrap, Foundation, Tailwind.
 
