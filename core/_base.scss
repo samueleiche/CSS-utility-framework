@@ -87,6 +87,12 @@ dl {
     padding: 0;
 }
 
+.list-inline {
+    li {
+        display: inline-block;
+    }
+}
+
 svg {
     overflow: hidden;
 }
