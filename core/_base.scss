@@ -19,7 +19,7 @@ body {
     margin: 0;
     line-height: get('text.height', $font);
     font-family: get('text.family', $font);
-    color: get('gray.darkest', $color);
+    color: get('text.color', $font);
     background-color: white;
 
     // Add dynamically to body - remove outlines from inputs when clicked on / keep outline when tabbing
@@ -44,7 +44,7 @@ h4 {
     margin: 0 0 12px;
     font-family: get('heading.family', $font);
     line-height: get('heading.height', $font);
-    color: get('gray.darkest', $color);
+    color: get('heading.color', $font);
     font-weight: get('heading.weight', $font);
 }
 
@@ -66,7 +66,7 @@ h4 {
 
 a {
     text-decoration: none;
-    color: get('gray.darkest', $color);
+    color: get('link.color', $font);
 
     &:hover {
         text-decoration: underline;

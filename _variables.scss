@@ -120,6 +120,9 @@ $font: (
             'smallest': 12px,
         ),
     ),
+    'link': (
+        'color': get('gray.darkest', $color),
+    ),
 );
 
 $shadow: (
