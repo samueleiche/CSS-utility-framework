@@ -65,9 +65,9 @@ need to do is prefix the utility with the breakpoint name, followed by
 the : character:
 ```html
 <div class="flex flex-wrap justify-center">
-    <div class="flex-12 md:flex-6 lg:flex-4"></div>
-    <div class="flex-12 md:flex-6 lg:flex-4"></div>
-    <div class="flex-12 md:flex-6 lg:flex-4"></div>
+    <div class="flexy-12 md:flexy-6 lg:flexy-4"></div>
+    <div class="flexy-12 md:flexy-6 lg:flexy-4"></div>
+    <div class="flexy-12 md:flexy-6 lg:flexy-4"></div>
 </div>
 ```
 **This does not work for every utility class in the framework — only the most relevant ones.**
@@ -103,13 +103,13 @@ Basic text utilities:
 ```html
 <article>
     <header>
-        <h3 class="black font-600">...</h3>
-        <p class="gray font-500 uppercase">...</p>
+        <h3 class="black font-bold">...</h3>
+        <p class="gray font-semibold uppercase italic">...</p>
     </header>
 
     <p>...</p>
 
-    <footer class="font-small border-top">
+    <footer class="font-sm border-top">
         ...
     </footer>
 </article>
