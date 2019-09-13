@@ -1,49 +1,3 @@
-.display-h1 {
-    font-size: get('heading.size.h1-display', $font);
-}
-
-.font-h1 {
-    font-size: get('heading.size.h1', $font);
-}
-
-.font-h2 {
-    font-size: get('heading.size.h2', $font);
-}
-
-.font-h3 {
-    font-size: get('heading.size.h3', $font);
-}
-
-.font-h4 {
-    font-size: get('heading.size.h4', $font);
-}
-
-
-.font-largest {
-    font-size: get('text.size.largest', $font);
-}
-
-.font-large {
-    font-size: get('text.size.large', $font);
-}
-
-.font-big {
-    font-size: get('text.size.big', $font);
-}
-
-.font-normal {
-    font-size: get('text.size.base', $font);
-}
-
-.font-small {
-    font-size: get('text.size.small', $font);
-}
-
-.font-smallest {
-    font-size: get('text.size.smallest', $font);
-}
-
-
 .uppercase {
     text-transform: uppercase;
 }
@@ -52,12 +6,13 @@
     text-transform: capitalize;
 }
 
-.underline {
-    text-decoration: underline;
+.lowercase {
+    text-transform: lowercase;
 }
 
-.italic {
-    font-style: italic;
+
+.underline {
+    text-decoration: underline;
 }
 
 .no-underline {
@@ -69,30 +24,35 @@
 }
 
 
-.font-300 {
-    font-weight: 300; // light
+.italic {
+    font-style: italic;
 }
 
-.font-400 {
-    font-weight: 400; // regular
+
+.font-light {
+    font-weight: 300;
 }
 
-.font-500 {
-    font-weight: 500; // medium
+.font-normal {
+    font-weight: 400;
 }
 
-.font-600 {
-    font-weight: 600; // semibold
+.font-medium {
+    font-weight: 500;
+}
+
+.font-semibold {
+    font-weight: 600;
 }
 
 b,
 strong,
-.font-700 {
-    font-weight: 700; // bold
+.font-bold {
+    font-weight: 700;
 }
 
-.font-800 {
-    font-weight: 800; // extra bold
+.font-extrabold {
+    font-weight: 800;
 }
 
 
@@ -100,11 +60,11 @@ strong,
     word-break: break-word;
 }
 
-.text-nowrap {
+.whitespace-nowrap {
     white-space: nowrap;
 }
 
-.text-wrap {
+.whitespace-normal {
     white-space: normal;
 }
 
@@ -112,4 +72,61 @@ strong,
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+}
+
+
+@mixin make-type-classes($size: '') {
+    .#{$size}display-h1 {
+        font-size: get('heading.size.h1-display', $font);
+    }
+
+    .#{$size}font-h1 {
+        font-size: get('heading.size.h1', $font);
+    }
+
+    .#{$size}font-h2 {
+        font-size: get('heading.size.h2', $font);
+    }
+
+    .#{$size}font-h3 {
+        font-size: get('heading.size.h3', $font);
+    }
+
+    .#{$size}font-h4 {
+        font-size: get('heading.size.h4', $font);
+    }
+
+
+    .#{$size}font-2xl {
+        font-size: get('text.size.2xl', $font);
+    }
+
+    .#{$size}font-xl {
+        font-size: get('text.size.xl', $font);
+    }
+
+    .#{$size}font-lg {
+        font-size: get('text.size.lg', $font);
+    }
+
+    .#{$size}font-base {
+        font-size: get('text.size.base', $font);
+    }
+
+    .#{$size}font-sm {
+        font-size: get('text.size.sm', $font);
+    }
+
+    .#{$size}font-xs {
+        font-size: get('text.size.xs', $font);
+    }
+}
+
+
+@include make-type-classes();
+
+@each $key, $mq in $mq-map {
+    @media (min-width: map-get($mq, 'breakpoint')) {
+        @include make-type-classes(map-get($mq, 'class-prefix'));
+    }
 }

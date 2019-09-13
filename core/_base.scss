@@ -5,8 +5,28 @@
     box-sizing: border-box;
 }
 
+
+// https://tailwindcss.com/docs/preflight#border-styles-are-reset-globally
+// make it easy to add border style with classes by adding border-style to solid by default
+* {
+    border-width: 0;
+    border-style: solid;
+    border-color: currentColor;
+}
+
+
+// [v-cloak] - Vue.js element attribute that gets removed after mount
+// use to hide pre-mounted content.
+[hidden],
+[v-cloak] {
+    display: none !important;
+}
+
+
 html {
+    // enable smooth scrolling to anchor links
     scroll-behavior: smooth;
+    // The `rem` unit is relative to the root—or the html—element
     font-size: get('text.size.base', $font);
 }
 
@@ -22,7 +42,8 @@ body {
     color: get('text.color', $font);
     background-color: white;
 
-    // Add dynamically to body - remove outlines from inputs when clicked on / keep outline when tabbing
+    // Add dynamically to body —
+    // removes outlines from inputs when clicked on / keep outline when tabbing
     &:not(.using-keyboard) {
         button,
         textarea,
@@ -31,6 +52,8 @@ body {
         }
     }
 
+    // with an overlay/modal with position:fixed and overflow:auto —
+    // keep the scrollbar to prevent content shfiting
     &.active-overlay {
         position: fixed;
         overflow-y: scroll;
@@ -175,11 +198,4 @@ header,
 footer,
 nav {
     display: block;
-}
-
-// [v-cloak] - Vue.js element attribute that gets removed after mount.
-// Use to hide pre-mounted content.
-[hidden],
-[v-cloak] {
-    display: none !important;
 }

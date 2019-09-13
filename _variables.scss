@@ -112,12 +112,12 @@ $font: (
         'color':    get('gray.darkest', $color),
         'height':   1.5,
         'size': (
-            'largest':  $base-font-size + 6px,
-            'large':    $base-font-size + 4px,
-            'big':      $base-font-size + 2px,
+            '2xl':  $base-font-size + 6px,
+            'xl':    $base-font-size + 4px,
+            'lg':      $base-font-size + 2px,
             'base':     $base-font-size,
-            'small':    $base-font-size - 2px,
-            'smallest': 12px,
+            'sm':    $base-font-size - 2px,
+            'xs': 12px,
         ),
     ),
     'link': (

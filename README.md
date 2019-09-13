@@ -70,7 +70,7 @@ the : character:
     <div class="flex-12 md:flex-6 lg:flex-4"></div>
 </div>
 ```
-**This does not work for every utility class in the framework.**
+**This does not work for every utility class in the framework — only the most relevant ones.**
 The classes are designed for a mobile first breakpoint system, similar to
 Bootstrap, Foundation, Tailwind.
 
