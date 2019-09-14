@@ -2,7 +2,7 @@ $max-columns: 12;
 
 @mixin make-base-utilities($prefix: '') {
     .#{$prefix}hidden {
-        display: none !important;
+        display: none;
     }
 
     .#{$prefix}block {
