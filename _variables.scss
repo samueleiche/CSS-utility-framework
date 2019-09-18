@@ -60,6 +60,9 @@ $transition: (
         'base-1': 160ms,
         'base-2': 200ms,
     ),
+    'easing': (
+        'easeInOutCirc': cubic-bezier(.77, .2, .05, 1.0),
+    )
 );
 
 
