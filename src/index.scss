@@ -1,0 +1,42 @@
+@import 'core/functions/get';
+
+@import 'variables';
+
+@import 'core/normalize';
+@import 'core/base';
+@import 'core/container';
+@import 'core/utility';
+@import 'core/border';
+
+@import 'typography';
+@import 'theme';
+@import 'transitions';
+
+@import 'components/button';
+@import 'components/image';
+@import 'components/background';
+
+
+@mixin responsive-factory($prefix: '') {
+    @include responsive-layout($prefix);
+    @include responsive-flex($prefix);
+    @include responsive-spacers($prefix);
+    @include responsive-typography($prefix);
+    @include responsive-borders($prefix);
+    @include responsive-images($prefix);
+}
+
+
+@mixin make-responsive() {
+    @include responsive-factory;
+
+    @each $key, $mq in $mq-map {
+        $prefix: map-get($mq, 'screen-prefix');
+
+        @media (min-width: map-get($mq, 'breakpoint')) {
+            @include responsive-factory($prefix);
+        }
+    }
+}
+
+@include make-responsive();

@@ -1,0 +1,12 @@
+.container {
+    padding-right: $spacer;
+    padding-left: $spacer;
+    margin-right: auto;
+    margin-left: auto;
+
+    @each $key, $mq in $mq-map {
+        @media (min-width: map-get($mq, 'breakpoint')) {
+            max-width: map-get($mq, 'container');
+        }
+    }
+}

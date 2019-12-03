@@ -1,0 +1,145 @@
+@mixin button-variant(
+    $background,
+    $foreground,
+    $mode: 'darken'
+) {
+    $variant-base:          $background;
+    $variant-hover-color:   if($mode == 'lighten', lighten($background, 6%), darken($background, 6%));
+    $variant-active-color:  if($mode == 'lighten', lighten($background, 12%), darken($background, 12%));
+    $disabled-color:        #dbdbdb;
+
+    color: $foreground;
+    background-color: $variant-base;
+    border-color: $variant-base;
+
+    &:focus {
+        background-color: $variant-hover-color;
+        border-color: $variant-hover-color;
+    }
+
+    &:hover {
+        background-color: $variant-hover-color;
+        border-color: $variant-hover-color;
+    }
+
+    &:active {
+        background-color: $variant-active-color;
+        border-color: $variant-active-color;
+    }
+
+    &.button-outlined {
+        color: $variant-base;
+        border-color: currentColor;
+
+        &,
+        &:hover,
+        &:active {
+            color: $variant-base;
+            background-color: rgba(0, 0, 0, 0);
+        }
+
+        &:hover,
+        &:focus {
+            background-color: rgba($variant-base, .15);
+        }
+
+        &:active {
+            color: white;
+            background-color: $variant-base;
+            border-color: $variant-base;
+        }
+    }
+
+    &:disabled,
+    &.disabled {
+        &,
+        &:hover,
+        &:active,
+        &:focus {
+            border-color: $disabled-color;
+            background-color: $disabled-color;
+        }
+    }
+}
+
+
+@mixin button-size(
+    $min-width,
+    $min-height,
+    $padding-vertical,
+    $font-size
+) {
+    min-width: $min-width;
+    min-height: $min-height;
+    padding: 0 $padding-vertical;
+    font-size: $font-size;
+}
+
+
+$button: (
+    'border-width': 2px,
+    'border-radius': 4px,
+    'font-weight': 500,
+    'shadow': unquote('0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.05)'),
+);
+
+
+.btn {
+    @include button-size(140px, 50px, 14px, 1rem);
+    @include button-variant(white, black);
+
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 auto;
+    border-radius: map-get($button, 'border-radius');
+    border: map-get($button, 'border-width') solid;
+    border-color: transparent;
+    font-weight: map-get($button, 'font-weight');
+    line-height: 1;
+    user-select: none;
+    touch-action: manipulation;
+    transition: background-color 160ms,
+        color 160ms,
+        box-shadow 160ms,
+        border 160ms;
+
+    &:disabled {
+        box-shadow: none;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+
+.btn-lg {
+    @include button-size(260px, 60px, 18px, 22px);
+}
+
+
+.btn-primary {
+    @include button-variant(get($color, 'black.400'), white, 'lighten');
+}
+
+
+.btn-raised {
+    box-shadow: map-get($button, 'shadow');
+}
+
+
+.btn-iconed-left {
+    i,
+    span {
+        margin-right: .4em;
+    }
+}
+
+.button-iconed-right {
+    i,
+    span {
+        margin-left: .4em;
+    }
+}

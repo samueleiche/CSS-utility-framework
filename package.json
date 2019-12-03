@@ -2,14 +2,13 @@
     "name": "css-utility-framework",
     "version": "1.0.0",
     "scripts": {
-        "dev": "node-sass --watch style.scss -o dist/",
-        "prebuild": "node-sass style.scss -o dist/",
-        "build": "npm run prebuild && postcss dist/style.css -u autoprefixer cssnano -r --map=false"
+        "dev": "node-sass --watch src/index.scss -o dist/",
+        "prebuild": "node-sass src/index.scss -o dist/",
+        "build": "npm run prebuild && postcss dist/app.css -u autoprefixer cssnano -r --map=false"
     },
     "browserslist": [
         "> 1%",
-        "last 2 versions",
-        "not ie <= 8"
+        "last 2 versions"
     ],
     "devDependencies": {
         "autoprefixer": "^9.6.1",

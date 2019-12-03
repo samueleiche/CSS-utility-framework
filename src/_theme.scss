@@ -1,0 +1,27 @@
+// text-color, bg-color, border-color
+
+.text-black {
+    color: get($color, 'black.400');
+}
+
+.text-white {
+    color: white;
+}
+
+
+.bg-black {
+    background-color: get($color, 'black.400');
+}
+
+.bg-white {
+    background-color: white;
+}
+
+
+.border-black {
+    border-color: get($color, 'black.400');
+}
+
+.border-white {
+    border-color: white;
+}

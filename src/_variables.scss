@@ -1,0 +1,94 @@
+// Media query map.
+$mq-map: (
+    'sm': (
+        'breakpoint': 600px,
+        'container': 100%,
+        'screen-prefix': sm\:,
+    ),
+    'md': (
+        'breakpoint': 960px,
+        'container': 100%,
+        'screen-prefix': md\:,
+    ),
+    'lg': (
+        'breakpoint': 1264px,
+        'container': 1200px,
+        'screen-prefix': lg\:,
+    ),
+    'xl': (
+        'breakpoint': 1600px,
+        'container': 1300px,
+        'screen-prefix': xl\:,
+    ),
+);
+
+// Container gutter and spacer utilities.
+$spacer: 1rem;
+$spacers: (
+    0: 0,
+    1: ($spacer * .25),
+    2: ($spacer * .5),
+    3: $spacer,
+    4: ($spacer * 1.5),
+    5: ($spacer * 3),
+    6: ($spacer * 6),
+    7: ($spacer * 12)
+);
+
+
+// Ratio percentage = (ratio height / ratio width) * 100
+$ratio: (
+    '16:9': 56.25%,
+    '3:2':  66.66%,
+    '4:3':  75%,
+    '1:1':  100%,
+);
+
+
+$transition: (
+    'timing': (
+        '1': 90ms,
+        '2': 160ms,
+        '3': 200ms,
+        '4': 300ms,
+    ),
+    'easing': (
+        'easeInOutQuint': cubic-bezier(.77, .2, .05, 1),
+        'easeInOutCubic': cubic-bezier(.2, 0, .2, 1),
+    ),
+);
+
+
+$color: (
+    'black': (
+        '400': #1B344A,
+    ),
+);
+
+
+$font: (
+    'heading': (
+        'family': unquote('Montserrat, sans-serif'),
+    ),
+    'text': (
+        'family': unquote('Montserrat, sans-serif'),
+    ),
+);
+
+
+$elevation: (
+    'z1': unquote('0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06)'),
+    'z2': unquote('0 4px 6px -1px rgba(0, 0, 0, .1), 0 2px 4px -1px rgba(0, 0, 0, .06)'),
+    'z3': unquote('0 10px 15px -3px rgba(0, 0, 0, .1), 0 4px 6px -2px rgba(0, 0, 0, .05)'),
+    'z4': unquote('0 20px 25px -5px rgba(0, 0, 0, .1), 0 10px 10px -5px rgba(0, 0, 0, .04)'),
+    'z5': unquote('0 25px 50px -12px rgba(0, 0, 0, .25)'),
+);
+
+
+$zindex: (
+    'dropdown': 1000,
+    'fixed':    1030,
+    'backdrop': 1040,
+    'modal':    1050,
+    'popover':  1060,
+);

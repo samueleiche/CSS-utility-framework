@@ -1,8 +1,27 @@
 $max-columns: 12;
 
-@mixin make-base-utilities($prefix: '') {
+@mixin offset($point) {
+    $percentage: 0;
+
+    @if $point != 0 {
+        $percentage: percentage($point / $max-columns);
+    }
+
+    margin-left: $percentage;
+}
+
+
+@mixin responsive-layout($prefix) {
     .#{$prefix}hidden {
         display: none;
+    }
+
+    .#{$prefix}flex {
+        display: flex;
+    }
+
+    .#{$prefix}inline-flex {
+        display: inline-flex;
     }
 
     .#{$prefix}block {
@@ -12,7 +31,6 @@ $max-columns: 12;
     .#{$prefix}inline-block {
         display: inline-block;
     }
-
 
     .#{$prefix}relative {
         position: relative;
@@ -30,7 +48,6 @@ $max-columns: 12;
         position: sticky;
     }
 
-
     .#{$prefix}text-center {
         text-align: center;
     }
@@ -42,41 +59,42 @@ $max-columns: 12;
     .#{$prefix}text-right {
         text-align: right;
     }
-}
 
-
-@mixin make-sizing-utilities($prefix: '') {
-    .#{$prefix}full-height {
+    .#{$prefix}h-full {
         height: 100%;
     }
 
-    .#{$prefix}auto-height {
+    .#{$prefix}h-auto {
         height: auto;
     }
 
-    .#{$prefix}screen-height {
+    .#{$prefix}h-screen {
         height: 100vh;
     }
 
-    .#{$prefix}full-width {
+    .#{$prefix}w-full {
         width: 100%;
     }
 
-    .#{$prefix}auto-width {
+    .#{$prefix}w-auto {
         width: auto;
+    }
+
+    @for $i from 0 through $max-columns - 1 {
+        @if ($i != 0) {
+            .#{$prefix}w-#{$i}\/#{$max-columns} {
+                width: percentage($i / $max-columns);
+            }
+        }
+
+        .#{$prefix}offset-#{$i} {
+            @include offset($i);
+        }
     }
 }
 
 
-@mixin make-flex-utilities($prefix: '') {
-    .#{$prefix}flex {
-        display: flex;
-    }
-
-    .#{$prefix}inline-flex {
-        display: inline-flex;
-    }
-
+@mixin responsive-flex($prefix) {
     .#{$prefix}flex-column {
         flex-direction: column;
     }
@@ -194,15 +212,23 @@ $max-columns: 12;
         align-self: auto; // Computes to the parent's align-items value
     }
 
+    .#{$prefix}order-first {
+        order: -1;
+    }
 
-    .#{$prefix}flexy-center {
-        justify-content: center;
-        align-items: center;
+    .#{$prefix}order-last {
+        order: $max-columns + 1;
+    }
+
+    @for $i from 1 through $max-columns {
+        .#{$prefix}order-#{$i} {
+            order: $i;
+        }
     }
 }
 
 
-@mixin make-spacer-utilities($prefix: '') {
+@mixin responsive-spacers($prefix: '') {
     // About auto margins:
     // https://css-tricks.com/the-peculiar-magic-of-flexbox-and-auto-margins/
     // in short - can be used for element alignment, buggy in IE 10/11
@@ -315,110 +341,93 @@ $max-columns: 12;
     }
 }
 
+.zindex-n1 {
+    z-index: -1;
+}
 
-@mixin flexy-column($point: null) {
-    width: 100%;
-
-    // if $point is not defined, make equal columns
-    @if $point == null {
-        flex-basis: 0;
-        flex-grow: 1;
-        max-width: 100%;
-    } @else {
-        @if $point < 1 or $point > $max-columns {
-            @error 'Required range 1-#{$max-columns}, was #{$point}';
-        }
-
-        $percentage: percentage($point / $max-columns);
-
-        flex: 0 0 $percentage;
-        max-width: $percentage;
-    }
+.zindex-1 {
+    z-index: 1;
 }
 
 
-@mixin flex-column-offset($point) {
-    $percentage: 0;
-
-    @if $point != 0 {
-        $percentage: percentage($point / $max-columns);
-    }
-
-    margin-left: $percentage;
+.pointer {
+    cursor: pointer;
 }
 
 
-@mixin make-flexy-columns($prefix: '') {
-    .#{$prefix}flexy-equal {
-        @include flexy-column;
-    }
+.inset {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
 
-    .#{$prefix}flexy-auto {
-        flex: 0 0 auto;
-        width: auto;
-        max-width: none;
-    }
+.inset-x {
+    right: 0;
+    left: 0;
+}
 
-    .#{$prefix}order-first {
-        order: -1;
-    }
+.inset-t {
+    top: 0;
+    right: 0;
+    left: 0;
+}
 
-    .#{$prefix}order-last {
-        order: $max-columns + 1;
-    }
+.inset-r {
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
 
-    @for $i from 1 through $max-columns {
-        .#{$prefix}flexy-#{$i} {
-            @include flexy-column($i);
-        }
+.inset-b {
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
 
-        .#{$prefix}order-#{$i} {
-            order: $i;
-        }
-
-        .#{$prefix}offset-#{$i - 1} {
-            @include flex-column-offset($i - 1);
-        }
-    }
+.inset-l {
+    top: 0;
+    bottom: 0;
+    left: 0;
 }
 
 
-@mixin make-containers {
-    .container {
-        padding-right: $gutter-width;
-        padding-left: $gutter-width;
-        margin-right: auto;
-        margin-left: auto;
+.no-overflow {
+    overflow: hidden;
+}
 
-        @each $key, $mq in $mq-map {
-            @media (min-width: map-get($mq, 'breakpoint')) {
-                max-width: map-get($mq, 'container-max-width');
-            }
-        }
-    }
+.overflow-x-auto {
+    overflow-x: auto;
+}
+
+.overflow-y-auto {
+    overflow-y: auto;
 }
 
 
-@mixin build-core() {
-    @include make-containers;
-
-    @include make-base-utilities();
-    @include make-flexy-columns();
-    @include make-flex-utilities();
-    @include make-spacer-utilities();
-    @include make-sizing-utilities();
-
-    @each $key, $mq in $mq-map {
-        $prefix: map-get($mq, 'class-prefix');
-
-        @media (min-width: map-get($mq, 'breakpoint')) {
-            @include make-base-utilities($prefix);
-            @include make-flexy-columns($prefix);
-            @include make-flex-utilities($prefix);
-            @include make-spacer-utilities($prefix);
-            @include make-sizing-utilities($prefix);
-        }
-    }
+.elevation-1 {
+    box-shadow: map-get($elevation, 'z1');
 }
 
-@include build-core();
+.elevation-2 {
+    box-shadow: map-get($elevation, 'z2');
+}
+
+.elevation-3 {
+    box-shadow: map-get($elevation, 'z3');
+}
+
+.elevation-4 {
+    box-shadow: map-get($elevation, 'z4');
+}
+
+.elevation-5 {
+    box-shadow: map-get($elevation, 'z5');
+}
+
+
+// Let flex content shrink below their minimum content size
+// https://dfmcphee.com/flex-items-and-min-width-0/
+.no-min-w {
+    min-width: 0;
+}

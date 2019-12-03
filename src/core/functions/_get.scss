@@ -105,13 +105,13 @@
 // `$key` String
 //
 // Example of use:
-// get('border.radius.xs', $color)
+// get($color, 'border.radius.xs')
 //
 // Dependencies:
 // deep-map-check, deep-map-get, str-explode
 //
 // @return Anything
-@function get($key, $map) {
+@function get($map, $key) {
     $keys: str-explode($key, '.');
 
     @if not deep-map-check($map, $keys...) {
