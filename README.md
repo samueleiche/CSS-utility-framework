@@ -28,36 +28,6 @@ $font: (
 ```
 
 
-### Flexy classes
-
-*Flexy* classes are compound flex utilities that have more than one property.
-```scss
-.flexy-center {
-    justify-content: center;
-    align-items: center;
-}
-
-.flexy-equal {
-    width: 100%;
-    flex-basis: 0;
-    flex-grow: 1;
-    max-width: 100%;
-}
-
-.flexy-auto {
-    width: auto;
-    flex: 0 0 auto;
-    max-width: none;
-}
-
-.flexy-* {
-    width: 100%;
-    flex: 0 0 percentage(* / max-columns);
-    max-width: percentage(* / max-columns);
-}
-```
-
-
 ### Responsive Classes
 
 To add a utility but only have it take effect at a certain breakpoint, all you
@@ -65,9 +35,8 @@ need to do is prefix the utility with the breakpoint name, followed by
 the : character:
 ```html
 <div class="flex flex-wrap justify-center">
-    <div class="flexy-12 md:flexy-6 lg:flexy-4"></div>
-    <div class="flexy-12 md:flexy-6 lg:flexy-4"></div>
-    <div class="flexy-12 md:flexy-6 lg:flexy-4"></div>
+    <div class="w-full md:w-6/12 lg:w-4/12"></div>
+    <div class="w-full md:w-6/12 lg:w-4/12"></div>
 </div>
 ```
 **This does not work for every utility class in the framework — only the most relevant ones.**
@@ -75,7 +44,7 @@ The classes are designed for a mobile first breakpoint system, similar to
 Bootstrap, Foundation, Tailwind.
 
 
-### Core Components
+### Included Components
 
 Images with ratios:
 ```html
@@ -104,12 +73,12 @@ Basic text utilities:
 <article>
     <header>
         <h3 class="black font-bold">...</h3>
-        <p class="gray font-semibold uppercase italic">...</p>
+        <p class="text-black font-semibold uppercase italic">...</p>
     </header>
 
     <p>...</p>
 
-    <footer class="font-sm border-top">
+    <footer class="font-xs border-t">
         ...
     </footer>
 </article>
