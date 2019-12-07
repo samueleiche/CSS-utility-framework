@@ -1,7 +1,6 @@
 # A light CSS utility-first toolkit
 
-Inspired by [Bootstrap grid](https://github.com/twbs/bootstrap) and
-[Tailwindcss](https://github.com/tailwindcss/tailwindcss).
+Inspired by [Tailwindcss](https://github.com/tailwindcss/tailwindcss).
 
 Build layouts without writing CSS, prototype or use as a boilerplate for your applications.
 
