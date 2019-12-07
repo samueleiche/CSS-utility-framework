@@ -44,7 +44,7 @@ the : character:
 </div>
 ```
 **This does not work for every utility class in the framework**
-You can add or extend your own responsive class groups 
+You can add or extend your own responsive class groups - 
 see [Extending responsive classes](#extending-responsive-classes)
 
 
