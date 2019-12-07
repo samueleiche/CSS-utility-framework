@@ -87,32 +87,32 @@ Basic text utilities:
 
 ### Extending Responsive Classes
 
-#### 1. Create a mixin which accepts an argument `$prefix` and add it in your new classes you want to make responsive:
+1. Create a mixin which accepts an argument `$prefix` and add it in your new classes you want to make responsive:
 ```scss
 // e.g. _visibility.scss
 
 @mixin responsive-visibility($prefix) {
     .#{$prefix}invisible {
-        visibility: visible
+        visibility: visible;
     }
 }
 ```
 
-#### 2. Add the mixin to the `responsive-factory` which gets called in the `index.scss` 
+2. Add the created mixin to the `responsive-factory` mixin in `index.scss` 
 ```scss
 // index.scss
 
 @mixin responsive-factory($prefix: '') {
     @include responsive-layout($prefix);
     // ...
-    @include responsive-visibility($prefix)
+    @include responsive-visibility($prefix);
 }
 
 // Result:
 //
 // .invisible
 // .sm:invisible
-// .md:invisible;
+// .md:invisible
 // .lg:invisible
 // .xl:invisible
 ```
