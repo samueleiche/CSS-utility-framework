@@ -1,12 +1,26 @@
-.container {
-    padding-right: $spacer;
-    padding-left: $spacer;
-    margin-right: auto;
-    margin-left: auto;
+@function is-percentage($value) {
+    @return is-number($value) and unit($value) == '%';
+}
 
+.container {
     @each $key, $mq in $mq-map {
         @media (min-width: map-get($mq, 'breakpoint')) {
             max-width: map-get($mq, 'container');
+        }
+    }
+}
+
+.container-1\/2 {
+    @each $key, $mq in $mq-map {
+        @media (min-width: map-get($mq, 'breakpoint')) {
+            $width: map-get($mq, 'container');
+
+            // Only halve non percentage values.
+            @if is-percentage($width) {
+                max-width: $width;
+            } @else {
+                max-width: $width / 2;
+            }
         }
     }
 }

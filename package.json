@@ -1,14 +1,16 @@
 {
     "name": "css-utility-framework",
-    "version": "1.0.0",
+    "version": "0.0.0",
     "scripts": {
         "dev": "node-sass --watch src/index.scss -o dist/",
         "prebuild": "node-sass src/index.scss -o dist/",
-        "build": "npm run prebuild && postcss dist/app.css -u autoprefixer cssnano -r --map=false"
+        "build": "npm run prebuild && postcss dist/index.css -u autoprefixer cssnano -r --map=false"
     },
     "browserslist": [
-        "> 1%",
-        "last 2 versions"
+        "> 5%",
+        "last 2 versions",
+        "not ie < 11",
+        "not dead"
     ],
     "devDependencies": {
         "autoprefixer": "^9.6.1",

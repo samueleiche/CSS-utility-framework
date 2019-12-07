@@ -1,4 +1,4 @@
-// Base styles inspired by Bootstrap and Normalize.css
+// Base styles inspired by Bootstrap, Tailwind preflight and Normalize.css.
 *,
 *::before,
 *::after {
@@ -6,15 +6,15 @@
 }
 
 // https://tailwindcss.com/docs/preflight#border-styles-are-reset-globally
-// make it easy to add border style with classes by adding border-style to solid by default
+// make it easy to add border style with classes by adding border-style to solid by default.
 * {
     border-width: 0;
     border-style: solid;
     border-color: currentColor;
 }
 
-// [v-cloak] - Vue.js element attribute that gets removed after mount
-// use to hide pre-mounted content.
+// [v-cloak] - Vue.js element attribute that gets removed after mount.
+// Use to hide pre-rendered moustache tags or customize preloader content.
 [hidden],
 [v-cloak] {
     display: none !important;
@@ -45,13 +45,6 @@ body {
             outline: none;
         }
     }
-
-    // with an overlay/modal with position:fixed and overflow:auto —
-    // keep the scrollbar to prevent content shfiting
-    &.active-overlay {
-        position: fixed;
-        overflow-y: scroll;
-    }
 }
 
 a {
@@ -67,16 +60,26 @@ strong {
     font-weight: inherit;
 }
 
-h1, h2, h3, h4, h5, h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 p,
 ol,
 ul,
 dl {
     margin-top: 0;
-    margin-bottom: .6em;
+    margin-bottom: 0.6em;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     line-height: 1.2;
 }
 
@@ -84,12 +87,6 @@ h1, h2, h3, h4, h5, h6 {
     list-style: none;
     margin: 0;
     padding: 0;
-}
-
-.list-inline {
-    li {
-        display: inline-block;
-    }
 }
 
 svg {
@@ -101,7 +98,6 @@ table {
 }
 
 iframe {
-    display: block;
     border: 0;
     width: 100%;
 }
@@ -115,7 +111,6 @@ figure {
 figcaption {
     margin-top: 1.2rem;
 }
-
 
 img,
 svg,
@@ -134,7 +129,6 @@ video {
     max-width: 100%;
     height: auto;
 }
-
 
 input,
 button,
@@ -191,4 +185,8 @@ header,
 footer,
 nav {
     display: block;
+}
+
+::selection {
+    // Customize...
 }

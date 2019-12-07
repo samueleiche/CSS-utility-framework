@@ -55,14 +55,14 @@ Images with ratios:
 
 Buttons:
 ```html
-<button type="button" class="button button-icon-left button-primary">
+<button type="button" class="btn btn-icon-left btn-primary">
     <i class="fa fa-pencil"></i>
     Iconed
 </button>
 
-<button type="button" class="button button-primary button-outlined">
+<a href="#" class="btn btn-primary btn-outlined">
     Outlined
-</button>
+</a>
 ```
 
 
@@ -72,13 +72,13 @@ Basic text utilities:
 ```html
 <article>
     <header>
-        <h3 class="black font-bold">...</h3>
+        <h2 class="text-black font-bold text-4xl md:text-6xl">...</h2>
         <p class="text-black font-semibold uppercase italic">...</p>
     </header>
 
     <p>...</p>
 
-    <footer class="font-xs border-t">
+    <footer class="text-xs border-t">
         ...
     </footer>
 </article>

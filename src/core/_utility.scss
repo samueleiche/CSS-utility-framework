@@ -341,12 +341,33 @@ $max-columns: 12;
     }
 }
 
+
 .zindex-n1 {
     z-index: -1;
 }
 
 .zindex-1 {
     z-index: 1;
+}
+
+.zindex-2 {
+    z-index: map-get($zindex, 'fixed');
+}
+
+.zindex-3 {
+    z-index: map-get($zindex, 'dropdown');
+}
+
+.zindex-4 {
+    z-index: map-get($zindex, 'backdrop');
+}
+
+.zindex-5 {
+    z-index: map-get($zindex, 'modal');
+}
+
+.zindex-6 {
+    z-index: map-get($zindex, 'popover');
 }
 
 
@@ -402,6 +423,19 @@ $max-columns: 12;
 
 .overflow-y-auto {
     overflow-y: auto;
+}
+
+
+.opacity-75 {
+    opacity: .75;
+}
+
+.opacity-50 {
+    opacity: .5;
+}
+
+.opacity-25 {
+    opacity: .25;
 }
 
 
