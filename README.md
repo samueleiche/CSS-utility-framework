@@ -103,7 +103,6 @@ Basic text utilities:
 // index.scss
 
 @mixin responsive-factory($prefix: '') {
-    @include responsive-layout($prefix);
     // ...
     @include responsive-visibility($prefix);
 }
