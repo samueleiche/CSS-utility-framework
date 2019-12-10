@@ -38,9 +38,16 @@ To add a utility but only have it take effect at a certain breakpoint, all you
 need to do is prefix the utility with the breakpoint name, followed by
 the : character:
 ```html
+<!-- .w-{1/11}/12 -->
 <div class="flex flex-wrap justify-center">
     <div class="w-full md:w-6/12 lg:w-4/12"></div>
     <div class="w-full md:w-6/12 lg:w-4/12"></div>
+</div>
+
+<!-- .w-{1/4}/5 -->
+<div class="flex">
+    <div class="w-2/5"></div>
+    <div class="w-3/5"></div>
 </div>
 ```
 **This does not work for every utility class in the framework**

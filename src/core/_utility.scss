@@ -82,8 +82,18 @@ $max-columns: 12;
 
     @for $i from 0 through $max-columns - 1 {
         @if ($i != 0) {
+            // .w-{1-11}/12
             .#{$prefix}w-#{$i}\/#{$max-columns} {
                 width: percentage($i / $max-columns);
+            }
+
+            @if ($i < 5) {
+                $max: 5;
+
+                // .w-{1-4}/5
+                .#{$prefix}w-#{$i}\/#{$max} {
+                    width: percentage($i / $max);
+                }
             }
         }
 
