@@ -31,12 +31,10 @@ $font: (
 
 ### Responsive Classes
 
-The classes are designed for a mobile first breakpoint system, similar to  
-Bootstrap, Foundation, Tailwind.  
+The classes are designed for a mobile first breakpoint system, similar to  Bootstrap, Foundation, Tailwind.  
 
-To add a utility but only have it take effect at a certain breakpoint, all you  
-need to do is prefix the utility with the breakpoint name, followed by  
-the : character:
+To add a utility but only have it take effect at a certain breakpoint, all you  need to do is prefix the utility with the breakpoint name,  
+followed by the `:` character:
 ```html
 <!-- .w-{1/11}/12 -->
 <div class="flex flex-wrap justify-center">
