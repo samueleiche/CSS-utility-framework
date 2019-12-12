@@ -291,6 +291,16 @@ $max-columns: 12;
             .#{$prefix}ml-n#{$i} {
                 margin-left: -$length;
             }
+
+            .#{$prefix}mx-n#{$i} {
+                margin-left: -$length;
+                margin-right: -$length;
+            }
+
+            .#{$prefix}my-n#{$i} {
+                margin-top: -$length;
+                margin-bottom: -$length;
+            }
         }
 
         .#{$prefix}mt-#{$i} {
