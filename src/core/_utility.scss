@@ -381,8 +381,12 @@ $max-columns: 12;
 }
 
 
-.pointer {
+.cursor-pointer {
     cursor: pointer;
+}
+
+.cursor-default {
+    cursor: default;
 }
 
 
