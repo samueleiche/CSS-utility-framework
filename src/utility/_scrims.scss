@@ -1,0 +1,97 @@
+/**
+* What are Scrims?
+*
+* In UX, a scrim is a design technique (a gradient or overlay) used to make text
+* more legible when overlaid on an image. The kind of visual treatment that is
+* becoming increasingly common in card-based design.
+*
+* A typical scrim is a neutral gradient that starts about half-way down an image
+* and increases to 30%-40% opacity, creating a subtle darkening effect that provides
+* enought contrast for white text to be legible.
+*
+* source https://github.com/brettgullan/tailwindcss-scrims
+*/
+
+$scrim-theme: rgb(255, 255, 255);
+
+.scrim-t,
+.scrim-t-1\/2,
+.scrim-b,
+.scrim-b-1\/2,
+.scrim-r,
+.scrim-r-1\/2,
+.scrim-l,
+.scrim-l-1\/2 {
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.scrim-t::after {
+    background-image: linear-gradient(
+        to bottom,
+        rgba($scrim-theme, 0.5),
+        rgba($scrim-theme, 0) 25%
+    );
+}
+
+.scrim-t-1\/2::after {
+    background-image: linear-gradient(
+        to bottom,
+        rgba($scrim-theme, 0.8),
+        rgba($scrim-theme, 0) 50%
+    );
+}
+
+.scrim-r::after {
+    background-image: linear-gradient(
+        to left,
+        rgba($scrim-theme, 0.5),
+        rgba($scrim-theme, 0) 25%
+    );
+}
+
+.scrim-r-1\/2::after {
+    background-image: linear-gradient(
+        to left,
+        rgba($scrim-theme, 0.8),
+        rgba($scrim-theme, 0) 50%
+    );
+}
+
+.scrim-b::after {
+    background-image: linear-gradient(
+        to top,
+        rgba($scrim-theme, 0.5),
+        rgba($scrim-theme, 0) 25%
+    );
+}
+
+.scrim-b-1\/2::after {
+    background-image: linear-gradient(
+        to top,
+        rgba($scrim-theme, 0.8),
+        rgba($scrim-theme, 0) 50%
+    );
+}
+
+.scrim-l::after {
+    background-image: linear-gradient(
+        to right,
+        rgba($scrim-theme, 0.5),
+        rgba($scrim-theme, 0) 25%
+    );
+}
+
+.scrim-l-1\/2::after {
+    background-image: linear-gradient(
+        to right,
+        rgba($scrim-theme, 0.8),
+        rgba($scrim-theme, 0) 50%
+    );
+}

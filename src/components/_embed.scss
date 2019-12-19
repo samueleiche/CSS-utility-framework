@@ -1,0 +1,103 @@
+/**
+* Example HTML
+*
+* <div class="embed aspect-ratio-4/3">
+*     <iframe src="https://www.youtube.com/embed/J---aiyznGQ"></iframe>
+* </div>
+*/
+
+.embed {
+    position: relative;
+    display: block;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+
+    iframe,
+    embed,
+    object,
+    video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+        border: 0;
+    }
+
+    img {
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        right: -50%;
+        bottom: -50%;
+        margin: auto;
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/**
+* Contain image in parent
+*/
+.embed-fit {
+    img {
+        max-height: 100%;
+        max-width: 100%;
+        height: auto;
+        width: auto;
+    }
+}
+
+/**
+* Contain image vertically
+*/
+.embed-fit-y {
+    img {
+        max-height: 100%;
+        width: auto;
+        max-width: none;
+    }
+}
+
+/**
+* Contain image horizontally (default behavior)
+*/
+.embed-fit-x {
+    img {
+        height: auto;
+        max-width: 100%;
+    }
+}
+
+/**
+* Stretch lazyload placeholder image to fit container
+*/
+.embed-preload {
+    img {
+        &:not(.lazy-image-loaded) {
+            max-height: none;
+            max-width: none;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+
+.aspect-ratio-square {
+    padding-top: map-get($ratio, '1:1');
+}
+
+.aspect-ratio-16\/9 {
+    padding-top: map-get($ratio, '16:9');
+}
+
+.aspect-ratio-4\/3 {
+    padding-top: map-get($ratio, '4:3');
+}
+
+.aspect-ratio-21\/9 {
+    padding-top: map-get($ratio, '21:9');
+}

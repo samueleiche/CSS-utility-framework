@@ -1,0 +1,122 @@
+@mixin responsive-spacers($prefix: '') {
+    // About auto margins:
+    // https://css-tricks.com/the-peculiar-magic-of-flexbox-and-auto-margins/
+    // in short - can be used for element alignment, buggy in IE 10/11
+
+    .#{$prefix}my-auto {
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .#{$prefix}mx-auto {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .#{$prefix}mt-auto {
+        margin-top: auto;
+    }
+
+    .#{$prefix}mr-auto {
+        margin-right: auto;
+    }
+
+    .#{$prefix}mb-auto {
+        margin-bottom: auto;
+    }
+
+    .#{$prefix}ml-auto {
+        margin-left: auto;
+    }
+
+    @each $i, $length in $spacers {
+        .#{$prefix}m-#{$i} {
+            margin: $length;
+        }
+
+        // negative margins
+        @if ($i != 0) {
+            .#{$prefix}mt-n#{$i} {
+                margin-top: -$length;
+            }
+
+            .#{$prefix}mr-n#{$i} {
+                margin-right: -$length;
+            }
+
+            .#{$prefix}mb-n#{$i} {
+                margin-bottom: -$length;
+            }
+
+            .#{$prefix}ml-n#{$i} {
+                margin-left: -$length;
+            }
+
+            .#{$prefix}mx-n#{$i} {
+                margin-left: -$length;
+                margin-right: -$length;
+            }
+
+            .#{$prefix}my-n#{$i} {
+                margin-top: -$length;
+                margin-bottom: -$length;
+            }
+        }
+
+        .#{$prefix}mt-#{$i} {
+            margin-top: $length;
+        }
+
+        .#{$prefix}mr-#{$i} {
+            margin-right: $length;
+        }
+
+        .#{$prefix}mb-#{$i} {
+            margin-bottom: $length;
+        }
+
+        .#{$prefix}ml-#{$i} {
+            margin-left: $length;
+        }
+
+        .#{$prefix}mx-#{$i} {
+            margin-left: $length;
+            margin-right: $length;
+        }
+
+        .#{$prefix}my-#{$i} {
+            margin-top: $length;
+            margin-bottom: $length;
+        }
+
+        .#{$prefix}p-#{$i} {
+            padding: $length;
+        }
+
+        .#{$prefix}pt-#{$i} {
+            padding-top: $length;
+        }
+
+        .#{$prefix}pr-#{$i} {
+            padding-right: $length;
+        }
+
+        .#{$prefix}pb-#{$i} {
+            padding-bottom: $length;
+        }
+
+        .#{$prefix}pl-#{$i} {
+            padding-left: $length;
+        }
+
+        .#{$prefix}px-#{$i} {
+            padding-left: $length;
+            padding-right: $length;
+        }
+
+        .#{$prefix}py-#{$i} {
+            padding-top: $length;
+            padding-bottom: $length;
+        }
+    }
+}

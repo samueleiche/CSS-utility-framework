@@ -22,7 +22,7 @@ $mq-map: (
     ),
 );
 
-// Container gutter and spacer utilities.
+
 $spacer: 1rem;
 $spacers: (
     0: 0,
@@ -46,7 +46,7 @@ $ratio: (
 
 
 $transition: (
-    'timing': (
+    'duration': (
         '1': 90ms,
         '2': 160ms,
         '3': 200ms,
