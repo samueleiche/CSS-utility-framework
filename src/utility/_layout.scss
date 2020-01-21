@@ -1,13 +1,13 @@
 $max-columns: 12;
 
-@mixin offset($point, $negative: false) {
+@mixin offset($point) {
     $percentage: 0;
 
     @if $point != 0 {
         $percentage: percentage($point / $max-columns);
     }
 
-    margin-left: if($negative, -$percentage, $percentage);
+    margin-left: $percentage;
 }
 
 
@@ -95,14 +95,16 @@ $max-columns: 12;
                     width: percentage($i / $max);
                 }
             }
+
+            // .offset-n{1-11}
+            .#{$prefix}offset-n#{$i} {
+                @include offset(-$i);
+            }
         }
 
-        .#{$prefix}push-#{$i} {
+        // .offset-{0-11}
+        .#{$prefix}offset-#{$i} {
             @include offset($i);
-        }
-
-        .#{$prefix}pull-#{$i} {
-            @include offset($i, true);
         }
     }
 }
